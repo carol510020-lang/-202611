@@ -1,219 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>京都・大阪 六日小旅行</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#F7F3EB"><meta name="description" content="京都・大阪六日秋日旅行誌｜2026.11.27—12.02">
+<title>KYOTO & OSAKA · 秋日旅行誌</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--paper:#FFFCF6;--ink:#3E3A39;--coral:#F2A497;--yellow:#F6D27A;--aqua:#A8D3E6;--green:#B9DAA5;--b:3px solid var(--ink);--r:24px;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"Huninn","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.7;font-size:16px}
-nav{position:fixed;top:0;left:0;right:0;z-index:20;background:var(--paper);border-bottom:var(--b);padding:calc(8px + env(safe-area-inset-top,0px)) 10px 8px;display:flex;gap:6px;overflow-x:auto}
-nav a{flex:0 0 auto;color:var(--ink);text-decoration:none;border:var(--b);border-radius:99px;padding:2px 14px;font-size:14px;background:var(--paper)}
-nav a:nth-child(4n+1){background:var(--coral)}nav a:nth-child(4n+2){background:var(--yellow)}nav a:nth-child(4n+3){background:var(--aqua)}nav a:nth-child(4n){background:var(--green)}
-nav a:focus-visible,button:focus-visible,input:focus-visible+span{outline:3px dashed var(--ink);outline-offset:2px}
-main{max-width:640px;margin:0 auto;padding:calc(72px + env(safe-area-inset-top,0px)) 16px 40px}
-section{margin-top:32px}
-h1,h2,h3,p{margin:0}
-h2{font-size:22px;margin-bottom:12px;display:inline-block;background:var(--yellow);border:var(--b);border-radius:99px;padding:0 18px}
-.card{background:var(--paper);border:var(--b);border-radius:var(--r);padding:16px}
-.note{font-size:12px;background:var(--yellow);border:2px solid var(--ink);border-radius:99px;padding:0 8px;margin-left:6px;white-space:nowrap}
-.hero{text-align:center}
-.scene{background:var(--aqua);border:var(--b);border-radius:32px;overflow:hidden;line-height:0}
-.scene svg{width:100%;height:auto}
-h1{font-size:34px;line-height:1.3;margin-top:16px}
-.sub{margin-top:4px;font-size:15px}
-.count{margin-top:14px;display:flex;justify-content:center;gap:8px}
-.count div{background:var(--coral);border:var(--b);border-radius:18px;padding:6px 0;width:70px;line-height:1.2}
-.count b{display:block;font-size:28px;font-weight:400}
-.count small{font-size:12px}
-.msg{margin-top:10px;font-size:14px}
-.fl{display:grid;gap:12px}
-.fl .card{display:grid;gap:8px}
-.fl .top{display:flex;justify-content:space-between;align-items:center;font-size:14px}
-.pill{background:var(--aqua);border:2px solid var(--ink);border-radius:99px;padding:0 10px;font-size:13px}
-.route{display:flex;align-items:center;justify-content:space-between;gap:8px;text-align:center}
-.route b{display:block;font-size:30px;font-weight:400;line-height:1.2}
-.route .mid{flex:1;line-height:0}
-.route small{font-size:13px}
-.days{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px}
-.days button{flex:0 0 auto;font:inherit;color:var(--ink);background:var(--paper);border:var(--b);border-radius:20px;padding:4px 12px;text-align:center;cursor:pointer;line-height:1.3}
-.days button b{display:block;font-weight:400;font-size:18px}
-.days button small{font-size:12px}
-.days button[aria-selected=true]{background:var(--coral);transform:translateY(-3px)}
-.dayhead{display:flex;align-items:center;gap:10px;margin:6px 0 14px}
-.dayhead h3{font-size:20px}
-.tl{position:relative;margin:0;padding:0 0 0 22px;list-style:none}
-.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;border-left:3px dashed var(--ink)}
-.tl li{position:relative;margin-bottom:14px}
-.tl li::before{content:"";position:absolute;left:-22px;top:20px;width:16px;height:16px;border:var(--b);border-radius:50%;background:var(--green)}
-.tl li.must::before{background:var(--coral)}
-.tl .t{font-size:13px}
-.tl h4{margin:0;font-size:18px;font-weight:400}
-.tl p{font-size:14px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
-.tag{font-size:12px;border:2px solid var(--ink);border-radius:99px;padding:0 10px;background:var(--aqua)}
-.tag.fly{background:var(--coral)}.tag.walk{background:var(--green)}.tag.bus{background:var(--yellow)}
-.star{display:inline-block;font-size:12px;background:var(--coral);border:2px solid var(--ink);border-radius:99px;padding:0 8px;margin-left:6px;vertical-align:middle;transform:rotate(-4deg)}
-.pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1) both}
-@keyframes pop{0%{transform:scale(.88) translateY(14px);opacity:0}100%{transform:none;opacity:1}}
-.list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.list label{display:flex;align-items:center;gap:12px;cursor:pointer;background:var(--paper);border:var(--b);border-radius:18px;padding:8px 14px}
-.list input{position:absolute;opacity:0}
-.list label>span:first-of-type{flex:0 0 26px;height:26px;border:var(--b);border-radius:9px;background:var(--paper);display:grid;place-items:center}
-.list input:checked+span{background:var(--green)}
-.list input:checked+span::after{content:"";width:6px;height:12px;border:solid var(--ink);border-width:0 3px 3px 0;transform:rotate(45deg) translate(-1px,-1px)}
-.list input:checked~span:last-child{text-decoration:line-through;opacity:.55}
-.prog{height:16px;border:var(--b);border-radius:99px;margin:0 0 10px;overflow:hidden;background:var(--paper)}
-.prog i{display:block;height:100%;width:0;background:var(--yellow);border-right:3px solid var(--ink);transition:width .4s}
-.grp{margin:14px 0 6px;font-size:16px}
-.hotel{display:grid;gap:6px;margin-bottom:12px}
-.hotel h3{font-size:19px}
-.hotel dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:14px}
-.hotel dt{background:var(--green);border:2px solid var(--ink);border-radius:99px;padding:0 10px;font-size:12px;align-self:center}
-.hotel dd{margin:0}
-footer{text-align:center;font-size:13px;margin-top:36px;line-height:0}
-footer p{line-height:1.6}
-.drift{animation:drift 14s ease-in-out infinite alternate}
-.drift2{animation:drift 20s ease-in-out infinite alternate-reverse}
-@keyframes drift{from{transform:translateX(-14px)}to{transform:translateX(16px)}}
-.fall{animation:fall 7s linear infinite}
-.fall.b{animation-delay:-2.5s;animation-duration:9s}.fall.c{animation-delay:-5s;animation-duration:8s}
-@keyframes fall{0%{transform:translate(0,-20px) rotate(0)}100%{transform:translate(-30px,230px) rotate(300deg)}}
-.train{animation:train 12s linear infinite}
-@keyframes train{from{transform:translateX(-170px)}to{transform:translateX(400px)}}
-.bob{animation:bob 3s ease-in-out infinite}
-@keyframes bob{50%{transform:translateY(-5px)}}
-.sun{animation:bob 5s ease-in-out infinite}
-.plane{animation:fly 4s ease-in-out infinite alternate}
-@keyframes fly{from{transform:translate(-10px,3px)}to{transform:translate(10px,-3px)}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+:root{--paper:#F7F3EB;--white:#FFFCF6;--ink:#393632;--muted:#82796e;--red:#AC6754;--gold:#C8AD83;--sage:#79816D;--line:#DAD0C2;--soft:#EEE8DD;--shadow:0 5px 20px rgba(75,57,36,.035);font-synthesis:none;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:83px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 'Noto Sans TC',system-ui,-apple-system,sans-serif;padding-bottom:94px}button,input,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:not-allowed}a{color:inherit}button,a,input,textarea,select{ -webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--red);outline-offset:3px}h1,h2,h3,p{margin:0}h1,h2,.serif{font-family:'Noto Serif TC','Noto Sans TC',serif;font-weight:600}h2{font-size:clamp(25px,5vw,36px);letter-spacing:.045em}h3{font-size:18px;font-weight:650;line-height:1.5}small,.small{font-size:12px;color:var(--muted)}.eyebrow{font-size:10px;letter-spacing:.19em;color:var(--sage);font-weight:700}.wrap{width:min(100% - 34px,1000px);margin:auto}.topbar{position:sticky;top:0;z-index:50;background:rgba(247,243,235,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.topinside{min-height:65px;display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{font-size:13px;font-weight:700;letter-spacing:.14em;text-decoration:none}.brand span{font-size:9px;color:var(--red);display:block;letter-spacing:.17em;line-height:1.3}.toplinks{display:none;gap:20px}.toplinks a{text-decoration:none;font-size:12px;color:var(--muted)}.toplinks a:hover{color:var(--red)}.menu-btn{background:transparent;border:1px solid var(--line);border-radius:9px;padding:7px 12px;color:var(--ink)}.menu-panel{display:none;padding:4px 0 17px;border-top:1px solid var(--line)}.menu-panel.open{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.menu-panel a{padding:10px;border:1px solid var(--line);border-radius:9px;text-decoration:none;font-size:13px;background:var(--white)}.bottomnav{position:fixed;left:0;bottom:0;right:0;z-index:60;background:var(--white);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:7px 8px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -6px 24px rgba(57,54,50,.04)}.bottomnav a{text-decoration:none;text-align:center;display:grid;justify-items:center;gap:1px;font-size:11px;color:var(--muted);border-radius:9px;padding:5px}.bottomnav a[aria-current="page"]{background:#F0E6DB;color:var(--red)}.bottomnav svg{width:21px;height:21px;stroke-width:1.7}.section{padding:62px 0 10px;scroll-margin-top:70px}.sectionhead{margin-bottom:24px}.sectionhead h2{margin:5px 0}.sectionhead p{color:var(--muted);font-size:13px}.paper{background:var(--white);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}.pad{padding:20px}.hero{padding:34px 0 16px}.hero-cover{position:relative;overflow:hidden;padding:22px 21px 17px}.cover-top,.cover-foot,.flex-between{display:flex;justify-content:space-between;align-items:center;gap:12px}.cover-top{border-bottom:1px solid var(--gold);padding-bottom:12px;font-size:9px;letter-spacing:.13em}.cover-top span:last-child{color:var(--red)}.hero h1{font-family:'Noto Serif TC',Georgia,serif;font-size:clamp(48px,12vw,101px);letter-spacing:-.035em;line-height:1.17;font-weight:600;margin:24px 0 11px}.hero h1 .amp{color:var(--red)}.hero .subtitle{color:var(--red);font-family:'Noto Serif TC',serif;line-height:2.1;font-size:clamp(13px,3.5vw,17px)}.cover-date{letter-spacing:.065em;font-size:11px;color:var(--muted);margin:13px 0}.hero-scene{max-width:690px;margin:8px auto 4px;overflow:hidden}.hero-scene svg{width:100%;height:auto;display:block;overflow:visible}.scene-train{transform:translateX(158px);animation:trainJourney 2.5s cubic-bezier(.27,.15,.18,1) 1s both}.scene-track{stroke-dasharray:710;stroke-dashoffset:710;animation:drawTrack 1s ease .45s forwards}.scene-leaf{animation:leafSway 3s ease-in-out infinite alternate;transform-origin:center}.cover-foot{border-top:1px solid var(--gold);padding-top:12px;font-size:11px;letter-spacing:.04em}.hero-text-appear{animation:riseIn .7s ease-out both}.hero-sub-appear{animation:riseIn .7s ease-out .3s both}@keyframes trainJourney{from{transform:translateX(-175px)}to{transform:translateX(158px)}}@keyframes drawTrack{to{stroke-dashoffset:0}}@keyframes riseIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes leafSway{to{transform:rotate(5deg) translateY(2px)}}.count-wrap{margin-top:18px}.count-top{margin:0 0 11px}.count-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.count-box{text-align:center;padding:12px 4px 13px;background:var(--white);border:1px solid var(--line);border-radius:11px}.count-num{font:600 clamp(31px,8vw,48px)/1.45 'Noto Serif TC',serif;font-variant-numeric:tabular-nums}.count-unit{font-size:13px;color:var(--red)}.count-foot{text-align:center;margin-top:10px;color:var(--muted);font-size:12px}.today{margin-top:19px;padding:17px 19px;border-left:3px solid var(--red)}.today .button{margin-top:12px}.journey-overview{display:flex;align-items:center;justify-content:space-between;gap:9px;margin-top:20px;padding:20px}.journey-overview strong{font-family:'Noto Serif TC',serif;font-size:20px}.journey-overview .line{flex:1;border-top:1px solid var(--gold);position:relative;margin:0 10px}.journey-overview .line:before{content:'🚃';position:absolute;top:-19px;left:45%;font-size:17px}.journey-overview small{display:block}.button,.ghost,.iconbtn{border:1px solid var(--line);background:var(--white);color:var(--ink);border-radius:9px;padding:9px 13px;line-height:1.35;font-size:13px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;min-height:40px}.button.primary{background:var(--red);border-color:var(--red);color:white}.button.sage{background:var(--sage);color:white;border-color:var(--sage)}.button:hover,.iconbtn:hover{border-color:var(--red)}.button.primary:hover{background:#95513f}.button.smallbtn,.iconbtn{padding:6px 10px;min-height:34px;font-size:12px}.iconbtn{min-width:35px}.buttonrow{display:flex;flex-wrap:wrap;gap:8px}.muted{color:var(--muted)}.cardstack{display:grid;gap:13px}.date-strip{display:flex;overflow-x:auto;gap:8px;padding:3px 0 10px;scrollbar-width:thin;scroll-snap-type:x proximity}.day-tab{flex:0 0 auto;min-width:72px;scroll-snap-align:start;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--white);color:var(--ink);text-align:center}.day-tab strong{display:block;font-size:14px}.day-tab small{font-size:10px}.day-tab.active{background:var(--red);color:#fff;border-color:var(--red)}.day-tab.active small{color:#fff}.day-panel{margin-top:12px}.day-panel.swap{animation:panelReveal .24s ease-out}@keyframes panelReveal{from{opacity:.3;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}.day-title{display:flex;justify-content:space-between;align-items:start;gap:12px;margin-bottom:14px}.tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:5px;font-size:11px;font-weight:600;background:var(--soft);color:#6c5c4d}.tag.must{background:#F0DFD8;color:#91513f}.tag.train{background:#E5EADC;color:#53634E}.tag.walk{background:#ECE5DA;color:#796654}.tag.bus{background:#E2EAF0;color:#526c7b}.tag.flight{background:#E7E4EF;color:#635c7a}.tag.pending{background:#EEEAE2;color:#766f64}.tag.food{background:#F1E2D7;color:#986049}.tag.hotel{background:#E4E9DE;color:#52664a}.reminder{border:1px solid #E4CFBF;background:#F7EEE5;border-radius:10px;padding:13px 15px;margin-bottom:18px}.reminder h3{font-size:14px;color:#88513e;margin-bottom:7px}.reminder ul{margin:0;padding-left:20px;font-size:13px}.timeline{position:relative;margin-left:10px;padding-left:24px;border-left:1px solid var(--gold)}.stop{position:relative;padding:0 0 20px 0}.stop:last-child{padding-bottom:4px}.stop:before{position:absolute;content:'';left:-30px;top:11px;width:10px;height:10px;background:var(--white);border:2px solid var(--red);border-radius:50%}.stop-head{display:flex;align-items:flex-start;gap:9px;justify-content:space-between}.stop-head button.stop-open{padding:0;background:none;border:0;color:var(--ink);text-align:left;min-width:0;flex:1}.stop-head button.stop-open .stop-name{font-weight:700;font-size:15px;line-height:1.7}.stop-head button.stop-open .hint{font-size:11px;color:var(--muted)}.stop-time{font-size:11px;color:var(--muted)}.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.stop-detail{margin-top:11px;background:#FAF8F3;border:1px solid #E8DED2;border-radius:10px;padding:14px;display:grid;gap:10px;font-size:13px}.stop-detail[hidden]{display:none}.stop-actions{margin-top:2px}.move-controls{display:flex;gap:4px}.subhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.subhead h3{font-family:'Noto Serif TC',serif}.fold{display:none}.fold.open{display:block}.field{display:grid;gap:5px;margin:10px 0}.field label{font-size:12px;font-weight:600}.field input,.field textarea,.field select{width:100%;background:#FFFEFB;color:var(--ink);border:1px solid #CDC2B3;border-radius:8px;padding:10px 12px;min-height:42px;outline-offset:2px}.field textarea{resize:vertical;min-height:74px}.food-item{border:1px solid var(--line);border-radius:10px;padding:12px 13px;background:var(--white);margin:9px 0}.food-item p{font-size:12px;color:var(--muted)}.separator{border:0;border-top:1px solid var(--line);margin:16px 0}.flight-grid{display:grid;gap:15px}.route{display:grid;grid-template-columns:1fr 66px 1fr;align-items:center;gap:7px;margin:18px 0}.route .airport:last-child{text-align:right}.airport strong{font:600 29px/1.3 'Noto Serif TC',serif;display:block}.airport b{font-size:17px;font-weight:600}.route-mid{text-align:center;color:var(--red);font-size:22px}.route-mid:after{content:'';display:block;border-top:1px solid var(--gold)}.flightcard{padding:19px}.flightcard h3{font-size:14px}.flightcard .flight-date{font-size:11px;color:var(--red);letter-spacing:.07em;font-weight:700}.transport-step{position:relative;padding:0 0 18px 30px;border-left:1px solid var(--gold);margin-left:10px}.transport-step:last-child{border:0;padding-bottom:0}.transport-step:before{content:'';position:absolute;left:-7px;top:7px;width:11px;height:11px;border:1px solid var(--red);background:var(--white);border-radius:50%}.transport-step .small{display:block}.hotel-grid{display:grid;gap:14px}.hotelcard h3{margin:7px 0}.hotelcard .buttonrow{margin-top:12px}.check-group{margin-top:14px}.progress-text{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:var(--muted);margin:8px 0}.progress{width:100%;height:5px;border-radius:100px;background:#E7DED2;overflow:hidden}.progress>div{height:100%;background:var(--sage);width:0%;transition:width .2s}.category-tabs{display:flex;overflow:auto;gap:8px;padding:4px 0 10px}.category-tabs button{flex:none;border:1px solid var(--line);background:var(--white);border-radius:9px;padding:8px 12px;white-space:nowrap;font-size:12px}.category-tabs button.active{background:var(--sage);color:white;border-color:var(--sage)}.checkitem{display:flex;align-items:center;gap:9px;padding:10px 0;border-bottom:1px solid #EEE7DD}.checkitem:last-child{border:0}.checkitem input[type=checkbox]{accent-color:var(--sage);width:19px;height:19px;flex:none}.checkitem .itemname{flex:1;min-width:0;overflow-wrap:anywhere}.checkitem.done .itemname{text-decoration:line-through;color:#988f83}.check-actions{display:flex;gap:3px;flex:none}.check-actions .iconbtn{padding:4px 6px;min-width:27px;min-height:29px}.edit-only{display:none}.editing .edit-only{display:inline-flex}.editing .edit-only.check-group{display:flex;flex-wrap:wrap}.status{font-size:12px;color:var(--sage);min-height:18px}.two-col{display:grid;grid-template-columns:minmax(0,1fr);gap:17px}.two-col>.paper{min-width:0}.note{font-size:12px;color:var(--muted)}.warn{background:#F7EEE5;border-left:3px solid var(--red);padding:10px 13px;border-radius:5px}.footer{text-align:center;border-top:1px solid var(--line);margin-top:54px;padding-top:24px;color:var(--muted);font-size:11px;letter-spacing:.06em}.toast{position:fixed;left:50%;bottom:calc(88px + env(safe-area-inset-bottom));transform:translate(-50%,12px);opacity:0;pointer-events:none;background:var(--ink);color:white;font-size:12px;padding:10px 17px;border-radius:10px;z-index:90;transition:opacity .2s,transform .2s;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.modal{position:fixed;inset:0;background:rgba(41,36,31,.35);z-index:100;display:grid;place-items:center;padding:18px}.modal[hidden]{display:none}.modal .paper{width:min(100%,460px);padding:24px}.modal h3{margin-bottom:8px}.modal .buttonrow{justify-content:end;margin-top:19px}.hide{display:none!important}
+@media(min-width:720px){body{padding-bottom:20px}.bottomnav{display:none}.menu-btn{display:none}.toplinks{display:flex}.hero-cover{padding:30px 36px 23px}.hero{padding-top:45px}.two-col{grid-template-columns:repeat(2,minmax(0,1fr))}.flight-grid,.hotel-grid{grid-template-columns:1fr 1fr}.section{padding-top:78px}.count-wrap{width:min(100%,580px);margin:22px auto 0}.hero-scene{max-width:690px}.cardstack{grid-template-columns:1fr 1fr}.day-panel{max-width:850px;margin:14px auto}.journey-overview{max-width:700px;margin:20px auto 0}}
+@media(max-width:350px){.wrap{width:min(100% - 22px,1000px)}.hero-cover{padding:16px 14px}.hero h1{font-size:43px}.count-num{font-size:30px}.pad{padding:15px}.airport strong{font-size:25px}.route{grid-template-columns:1fr 46px 1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.scene-train{transform:translateX(158px)!important}.scene-track{stroke-dashoffset:0!important}.hero-text-appear,.hero-sub-appear{opacity:1!important;transform:none!important}}
+
+/* Mobile Safari interaction hardening */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+button,a,input,select,textarea{touch-action:manipulation}
+input,textarea,select{font-size:16px!important}
+@media(max-width:719px){.bottomnav a{min-height:48px}.menu-btn{min-height:44px}.day-tab{min-height:62px}.iconbtn{min-width:40px;min-height:40px}.wrap{overflow-wrap:anywhere}}
+.storage-warning{background:#F3E5D7;color:#6F4133;border-bottom:1px solid #AC6754;padding:12px 18px;font-size:13px;line-height:1.7;position:relative;z-index:70}
+@supports(-webkit-touch-callout:none){.bottomnav{padding-bottom:max(10px,env(safe-area-inset-bottom))}body{padding-bottom:calc(95px + env(safe-area-inset-bottom))}}
+
+/* Readable itinerary even inside ChatGPT / iPhone file previews with JavaScript disabled */
+.static-itinerary{display:grid;gap:12px;margin-top:15px}
+.static-explain{border-left:3px solid var(--red);background:#F5E9DE;padding:12px 14px;border-radius:7px;font-size:13px;line-height:1.75}
+.fallback-day{overflow:hidden}
+.fallback-day>summary{list-style:none;cursor:pointer;padding:15px 18px;display:grid;gap:3px;position:relative;padding-right:40px}
+.fallback-day>summary::-webkit-details-marker{display:none}
+.fallback-day>summary:after{content:'⌄';position:absolute;right:18px;top:24px;font-size:19px;color:var(--red)}
+.fallback-day[open]>summary:after{content:'⌃'}
+.fallback-day-num{font-size:11px;color:var(--red);font-weight:600;letter-spacing:.06em}
+.fallback-day>summary strong{font-family:'Noto Serif TC',serif;font-size:18px}
+.fallback-expand{font-size:11px;color:var(--muted)}
+.fallback-content{padding:0 18px 18px}
+.fallback-reminders{background:#F7EEE5;padding:12px 15px;border-radius:9px;font-size:13px}
+.fallback-reminders b{color:#88513e}.fallback-reminders ul{margin:5px 0 0;padding-left:20px}
+.fallback-timeline{border-left:1px solid var(--gold);margin:17px 0 0 7px;padding-left:19px}
+.fallback-stop{padding:0 0 19px;position:relative}
+.fallback-stop:before{content:'';position:absolute;left:-26px;top:8px;width:9px;height:9px;border-radius:50%;border:2px solid var(--red);background:var(--white)}
+.fallback-stop strong{display:block;font-size:14px}
+.fallback-time{color:var(--muted);font-size:12px}
+.fallback-meta{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0}
+.fallback-stop p{font-size:12px;color:var(--muted);margin:5px 0}
+.fallback-stop>a{font-size:12px;color:var(--red);text-decoration:underline;text-underline-offset:3px}
+#dateTabs,#dayPanel{display:none}
+html[data-js-ready="true"] .static-itinerary{display:none}
+html[data-js-ready="true"] #dateTabs{display:flex}
+html[data-js-ready="true"] #dayPanel{display:block}
+/* Anchors target the actual section, clear of sticky header */
+#home,#itinerary,#travel,#preparation{scroll-margin-top:84px}
+@media(max-width:719px){.sectionhead{margin-bottom:16px}.fallback-day>summary{min-height:64px}}
+
+/* Reserved-seat HSR ticket, readable even when JavaScript is blocked by preview */
+.hsr-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:18px;margin:12px 0 17px}
+.hsr-card .hsr-head{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:center;margin-bottom:13px}
+.hsr-label{font-size:11px;letter-spacing:.07em;color:var(--red);font-weight:700}
+.hsr-route{display:grid;grid-template-columns:minmax(0,1fr) 65px minmax(0,1fr);align-items:center;gap:5px}
+.hsr-station{min-width:0}.hsr-station b{display:block;font-size:14px;color:var(--ink)}
+.hsr-station strong{font-family:system-ui,-apple-system,'Noto Sans TC',sans-serif;display:block;font-size:clamp(26px,6vw,36px);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.hsr-arrow{text-align:center;font-size:12px;color:var(--red);font-weight:700;line-height:1.8}
+.hsr-extra{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.hsr-extra span{border-radius:6px;background:#F4EDE3;padding:6px 9px;font-size:12px;color:var(--ink)}
+.hsr-fare{font-size:12px;color:var(--muted);margin:12px 0 0;line-height:1.7}
+@media(max-width:360px){.hsr-card{padding:12px}.hsr-route{grid-template-columns:minmax(0,1fr) 52px minmax(0,1fr)}}
+
+/* V1.1: compact travel card and comprehensive direct navigation */
+.topbar{background:var(--paper)}
+.section-shortcuts{border-top:1px solid var(--line);background:#F7F3EB}
+.shortcut-scroll{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:8px 0 9px;-webkit-overflow-scrolling:touch}
+.shortcut-scroll a{flex:0 0 auto;font-size:12px;white-space:nowrap;text-decoration:none;border:1px solid #D8CDBE;background:#FFFCF6;padding:5px 11px;border-radius:9px;min-height:32px;display:flex;align-items:center}
+.shortcut-scroll a:focus-visible,.shortcut-scroll a:hover{color:var(--red);border-color:var(--red)}
+.menu-panel.open{grid-template-columns:repeat(3,minmax(0,1fr))}
+.menu-panel a{text-align:center;font-size:12px;padding:10px 4px}
+#home,#travel,#itinerary,#preparation,#hsr,#flights,#hotels,#foodAnchor,#prepBox,#packBox,#buyBox{scroll-margin-top:96px}
+.compact-transport{padding:14px 16px;max-width:680px;margin:0 0 13px}
+.compact-title h3{font-size:15px}
+.compact-route{display:grid;grid-template-columns:1fr 76px 1fr;gap:8px;align-items:center;padding:9px 0}
+.compact-route strong{display:block;font-size:clamp(23px,5.5vw,31px);font-variant-numeric:tabular-nums;line-height:1.4}
+.compact-route .last{text-align:right}
+.compact-route-mid{text-align:center;color:var(--red);display:grid;gap:0;justify-items:center;line-height:1.15}
+.compact-route-mid b{font-size:12px}.compact-route-mid span{font-size:25px}.compact-route-mid small{font-size:10px}
+.compact-meta{display:flex;gap:6px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:10px}
+.compact-meta span{font-size:11px;color:var(--ink);background:#F2ECE1;padding:3px 8px;border-radius:5px}
+.compact-footnote{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
+@media(min-width:800px){.toplinks{display:none}.menu-btn{display:block}}
+@media(max-width:390px){.shortcut-scroll{gap:5px}.shortcut-scroll a{font-size:11px;padding:5px 9px}.compact-transport{padding:12px}.compact-route{grid-template-columns:1fr 60px 1fr}}
+
+/* V1.2 clean navigation + lighter visual hierarchy */
+html{scroll-padding-top:78px}
+body{font-size:14px;line-height:1.7}
+.section{padding:50px 0 8px}
+.sectionhead p,.note,.small{font-size:12px}
+.paper{border-radius:16px}
+.topinside{min-height:56px}
+.toplinks,.menu-btn,.menu-panel{display:none!important}
+.section-shortcuts{border-top:0;background:transparent}
+.shortcut-scroll{padding:6px 0 10px;gap:6px}
+.shortcut-scroll a{font-size:11px;padding:4px 10px;min-height:30px;border-radius:999px;background:#fffdf8}
+.hero{padding-top:26px}.hero-cover{padding:18px 18px 14px}
+.hero h1{font-size:clamp(42px,11vw,84px);margin:19px 0 8px}
+.subtitle{font-size:clamp(12px,3.4vw,16px)}
+.count-wrap{margin-top:14px}.count-grid{gap:8px}.count-box{padding:9px 4px 10px;border-radius:12px}
+.count-num{font-size:clamp(28px,7vw,42px)}
+.journey-overview{background:transparent;border:0;box-shadow:none;padding:10px 4px 0;margin-top:14px;border-radius:0}
+.journey-overview .line:before{top:-17px;font-size:16px}
+.compact-transport{max-width:620px;padding:12px 14px;border-style:dashed;background:#FEFCF7;box-shadow:none}
+.compact-title h3{font-size:14px}.compact-route{padding:7px 0;grid-template-columns:1fr 68px 1fr}.compact-route strong{font-size:clamp(21px,5.2vw,28px)}
+.compact-meta span{background:#F5EFE6;border-radius:999px;padding:3px 8px}
+.flightcard{padding:16px;border-left:4px solid var(--red);box-shadow:none}
+.hotelcard{background:#FCF9F3;border-style:dashed;box-shadow:none}
+.food-item{background:#FCF8F2;border-radius:16px 16px 16px 6px}
+.reminder{border-radius:14px;background:#F8F0E7}
+#prepBox,#packBox,#buyBox{box-shadow:none}
+.prep-grid{display:grid;gap:14px}
+@media(min-width:760px){.prep-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:390px){.section{padding-top:42px}.hero h1{font-size:38px}.compact-route{grid-template-columns:1fr 56px 1fr}}
+
+.daily-note-controls{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:8px 0 3px}.daily-note-status{font-size:12px;color:var(--sage)}.daily-note-status.error{color:#AD5545}.daily-note-controls button{min-height:42px}
+
+/* V1.3: accessible food quick-add and itinerary linking */
+.food-header-actions{display:flex;flex-wrap:wrap;gap:7px;justify-content:flex-end}
+.food-entry-panel{margin-top:13px;padding:15px 16px;background:#F9F3EA;border-top:2px solid var(--gold);border-bottom:1px solid var(--line);border-radius:5px}
+.food-item .buttonrow{align-items:center}
+@media(max-width:420px){#foodAnchor{align-items:flex-start;flex-wrap:wrap}.food-header-actions{width:100%;justify-content:flex-start}}
+.food-form-status{font-size:12px;color:#6A765D;margin:9px 0 0;line-height:1.6}#foodResult{padding:7px 0;font-weight:600}.food-entry-panel button{touch-action:manipulation}
+
+/* Firebase two-person shared editing */
+.cloud-strip{display:flex;align-items:center;justify-content:space-between;gap:9px;padding:6px 0 9px;border-top:1px solid var(--line)}
+.cloud-badge{font-size:11px;color:#566a50;display:inline-flex;gap:6px;align-items:center;max-width:75%;overflow-wrap:anywhere}
+.cloud-badge::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#b6a17b;flex-shrink:0}
+.cloud-badge.ok::before{background:#638461}.cloud-badge.bad::before{background:#bf5c43}
+.cloud-signout{background:none;border:0;color:var(--muted);font-size:11px;text-decoration:underline;padding:3px 6px}
+.cloud-gate{position:fixed;z-index:200;inset:0;background:rgba(47,41,34,.46);display:grid;place-items:center;padding:16px;overflow-y:auto}
+.cloud-gate[hidden]{display:none!important}
+.cloud-login{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:28px 22px;box-shadow:0 15px 60px #281a143b;width:min(100%,415px)}
+.cloud-login h2{font-size:28px;margin:8px 0}.cloud-login h3{font-size:17px;margin-bottom:12px}
+.cloud-login .field{margin:12px 0}.cloud-login .button.primary{width:100%;margin-top:10px}
+.cloud-login p{font-size:12px;color:var(--muted);margin:9px 0}.cloud-error{color:#a84231!important;min-height:19px}
+@media(max-width:719px){.cloud-strip{padding:4px 0 7px}.cloud-login{padding:24px 18px}}
+
 </style>
 </head>
 <body>
-<nav aria-label="頁面選單"><a href="#top">首頁</a><a href="#flight">航班</a><a href="#plan">行程</a><a href="#todo">待辦</a><a href="#stay">住宿</a><a href="#before">出發前</a><a href="#pack">行李</a></nav>
-<main id="top">
-<section class="hero" style="margin-top:0">
-<div class="scene" aria-hidden="true">
-<svg viewBox="0 0 360 230" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
-<g class="sun"><circle cx="290" cy="52" r="24" fill="#F2A497"/></g>
-<g class="drift" fill="#FFFCF6"><path d="M40 60h70a16 16 0 0 0-6-30 20 20 0 0 0-38-4 18 18 0 0 0-26 34z"/></g>
-<g class="drift2" fill="#FFFCF6"><path d="M190 36h52a12 12 0 0 0-4-22 15 15 0 0 0-28-3 13 13 0 0 0-20 25z"/></g>
-<path d="M-4 170Q60 110 130 150T260 140 364 160V232H-4z" fill="#B9DAA5"/>
-<g fill="#FFFCF6"><path d="M236 140h60v-8h-60zM242 132h48l-6-14h-36zM250 118h32l-5-12h-22z"/></g>
-<path d="M236 140h60M242 132h48M250 118h32" stroke-width="3"/>
-<path d="M258 106l8-14 8 14" fill="#F6D27A"/><path d="M243 130l-6 6M289 130l6 6" />
-<g fill="#FFFCF6"><path d="M247 140v14h38v-14M257 140v14h6v-14z"/></g>
-<g><rect x="36" y="94" width="8" height="76" fill="#F2A497"/><rect x="104" y="94" width="8" height="76" fill="#F2A497"/>
-<path d="M22 90Q74 100 126 90l-4-14Q74 86 26 76z" fill="#F2A497"/><rect x="34" y="106" width="80" height="8" fill="#F2A497"/></g>
-<path d="M-4 190Q80 170 160 190T364 185V232H-4z" fill="#F6D27A"/>
-<rect x="-4" y="204" width="368" height="8" fill="#FFFCF6"/>
-<g class="train"><rect x="0" y="176" width="120" height="30" rx="12" fill="#FFFCF6"/><path d="M0 188h120" /><path d="M120 190q0-14-12-14h-30" /><rect x="14" y="181" width="14" height="9" rx="3" fill="#A8D3E6"/><rect x="36" y="181" width="14" height="9" rx="3" fill="#A8D3E6"/><rect x="58" y="181" width="14" height="9" rx="3" fill="#A8D3E6"/><rect x="82" y="181" width="16" height="9" rx="3" fill="#A8D3E6"/><circle cx="26" cy="208" r="5" fill="#3E3A39"/><circle cx="94" cy="208" r="5" fill="#3E3A39"/></g>
-<g stroke-width="2.5"><path class="fall" d="M60 0l6 6-6 8-6-8z" fill="#F2A497"/><path class="fall b" d="M180 0l6 6-6 8-6-8z" fill="#F6D27A"/><path class="fall c" d="M320 0l6 6-6 8-6-8z" fill="#F2A497"/></g>
-</svg></div>
-<h1>京都・大阪<br>六日小旅行</h1>
-<p class="sub">2026/11/27（五）– 12/2（三）・楓葉尾聲的關西</p>
-<div class="count" role="timer" aria-live="off"><div><b id="cd">–</b><small>天</small></div><div><b id="ch">–</b><small>時</small></div><div><b id="cm">–</b><small>分</small></div></div>
-<p class="msg" id="cmsg"></p>
+<div id="previewNotice" role="alert" style="background:#F3E5D7;border-bottom:2px solid #AC6754;padding:16px 20px;font-size:14px;line-height:1.8;color:#393632;position:relative;z-index:75"><strong>操作尚未啟用</strong><div>如果你正在 iPhone「檔案」或 ChatGPT 的預覽畫面觀看，此預覽可能不支援網站按鈕與動畫。請將 HTML 存至檔案，再用能執行 JavaScript 的瀏覽器開啟；若仍無法操作，需將檔案放在 HTTPS 網站上使用。單純改寫 HTML 無法解除預覽器的限制。</div></div>
+
+<header class="topbar"><div class="wrap topinside"><a href="#home" class="brand">K / O JOURNAL<span>AUTUMN 2026</span></a><button class="menu-btn" id="menuToggle" aria-expanded="false" aria-controls="menuPanel" type="button">☰ 選單</button></div><nav class="wrap menu-panel" id="menuPanel" aria-label="展開選單"><a href="#home">首頁</a><a href="#hsr">高鐵</a><a href="#flights">航班</a><a href="#hotels">住宿</a><a href="#itinerary">每日行程</a><a href="#foodAnchor">美食候選</a><a href="#prepBox">出發清單</a><a href="#packBox">行李清單</a><a href="#buyBox">必買清單</a></nav><nav class="section-shortcuts" aria-label="快速前往各段落"><div class="wrap shortcut-scroll"><a href="#home">首頁</a><a href="#hsr">高鐵</a><a href="#flights">航班</a><a href="#hotels">住宿</a><a href="#itinerary">每日行程</a><a href="#foodAnchor">美食候選</a><a href="#prepBox">出發清單</a><a href="#packBox">行李清單</a><a href="#buyBox">必買清單</a></div></nav></header>
+<div class="wrap cloud-strip"><span id="cloudStatus" class="cloud-badge" role="status" aria-live="polite">等待 Firebase 連線…</span><button id="cloudSignout" class="cloud-signout" type="button" hidden>登出</button></div>
+
+<div id="cloudGate" class="cloud-gate" role="dialog" aria-modal="true" aria-label="旅行網站雲端登入">
+ <div class="cloud-login">
+  <p class="eyebrow">OUR AUTUMN JOURNEY · 2026</p>
+  <h2>KYOTO &amp; OSAKA</h2>
+  <h3 id="cloudGateTitle">正在連接旅行網站…</h3>
+  <p id="cloudGateInfo">請使用網路開啟網站，讀取共用行程資料。</p>
+  <form id="cloudLoginForm" hidden>
+   <div class="field"><label for="cloudEmail">旅行網站登入 Email</label><input type="email" id="cloudEmail" autocomplete="username" required placeholder="請輸入 Email"></div>
+   <div class="field"><label for="cloudPassword">旅行網站密碼</label><input type="password" id="cloudPassword" autocomplete="current-password" required placeholder="請輸入密碼"></div>
+   <button class="button primary" type="submit" id="cloudLoginSubmit">登入並開啟共用行程</button>
+  </form>
+  <div id="cloudFirstSetup" hidden>
+   <p>雲端還沒有共用行程。請先在你平常編輯的瀏覽器上建立，避免既有備註遺失。</p>
+   <button type="button" class="button primary" id="cloudInitLocal">使用此裝置行程建立雲端共用資料</button>
+   <p class="note">首次建立後，另一支手機登入會直接讀取雲端內容，不會覆蓋你的資料。</p>
+  </div>
+  <p id="cloudLoginError" class="cloud-error" role="alert"></p>
+ </div>
+</div>
+<main>
+<section id="home" class="hero wrap" aria-labelledby="heroTitle"><div class="paper hero-cover"><div class="cover-top"><span>THE AUTUMN TRAVEL JOURNAL</span><span>JAPAN / 2026</span></div><div class="hero-text-appear"><p class="eyebrow" style="margin-top:25px">SIX DAYS, TWO CITIES</p><h1 id="heroTitle">KYOTO<br><span class="amp">&</span> OSAKA.</h1></div><p class="subtitle hero-sub-appear">在紅葉與街道之間，<br>慢慢走過京都與大阪。</p><p class="cover-date">NOV 27 — DEC 02, 2026</p>
+<div class="hero-scene"><svg viewBox="0 0 680 235" role="img" aria-label="京都五重塔、紅葉與大阪城的秋日地景，復古電車從京都前往大阪" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 190 Q90 177 186 190 T356 185 T529 189 T680 181 V212 H0Z" fill="#EAE2D5"/>
+<!-- Kyoto pagoda -->
+<g stroke="#66594e" stroke-width="2.2" stroke-linejoin="round"><path d="M55 187V90h100v97" fill="#E8DACA"/><path d="M39 96L106 60l65 36Z" fill="#78695D"/><path d="M60 122L106 97l46 25Z" fill="#AC6754"/><path d="M69 145L106 124l37 21Z" fill="#78695D"/><path d="M79 168L106 152l27 16Z" fill="#AC6754"/><path d="M99 187v-17h16v17" fill="#F7F3EB"/><path d="M106 60V39m-12 0h24" fill="none"/></g>
+<path d="M200 190Q208 131 232 76 M218 133l-29-31 M222 117l36-29" fill="none" stroke="#796859" stroke-width="4"/>
+<g fill="#AC6754"><circle cx="230" cy="79" r="23"/><circle cx="201" cy="95" r="19"/><circle cx="255" cy="100" r="19"/><circle cx="193" cy="68" r="15"/></g><g class="scene-leaf" fill="#C48A67"><path d="M274 52l8 7 10-5-3 11 8 5-12 1-1 11-6-10-11 3 5-10-7-8z"/><path d="M312 104l5 6 7-4-1 8 6 3-8 2-1 8-5-7-8 2 3-8-5-5z"/></g>
+<!-- Osaka silhouette -->
+<g fill="#DED7C9" stroke="#897B6E" stroke-width="1.4"><path d="M456 186v-46h37v46M502 186v-66h38v66M545 186v-37h38v37M591 186v-54h24v54"/></g>
+<g stroke="#65594F" stroke-width="2" stroke-linejoin="round"><path d="M554 187V101h77v86" fill="#EEE1CC"/><path d="M541 108l52-27 53 27z" fill="#79816D"/><path d="M555 130l38-20 39 20z" fill="#78685A"/><path d="M562 151l31-17 32 17z" fill="#AC6754"/><path d="M581 187v-24h24v24" fill="#F7F3EB"/><path d="M593 81V68"/></g>
+<text x="61" y="27" font-family="sans-serif" font-size="14" fill="#79816D" letter-spacing="4">KYOTO</text><text x="549" y="27" font-family="sans-serif" font-size="14" fill="#79816D" letter-spacing="4">OSAKA</text>
+<path class="scene-track" d="M5 207H675 M5 217H675" fill="none" stroke="#78685A" stroke-width="2.2"/>
+<g class="scene-train"><rect x="164" y="158" width="166" height="47" rx="10" fill="#FFFCF6" stroke="#393632" stroke-width="2.2"/><path d="M168 167h157" stroke="#AC6754" stroke-width="7"/><rect x="182" y="175" width="30" height="17" rx="3" fill="#B8C7C1" stroke="#393632"/><rect x="220" y="175" width="30" height="17" rx="3" fill="#B8C7C1" stroke="#393632"/><rect x="260" y="175" width="30" height="17" rx="3" fill="#B8C7C1" stroke="#393632"/><rect x="299" y="175" width="17" height="17" rx="3" fill="#B8C7C1" stroke="#393632"/><path d="M166 197h162" stroke="#C8AD83" stroke-width="3"/><circle cx="197" cy="207" r="6" fill="#393632"/><circle cx="295" cy="207" r="6" fill="#393632"/></g>
+</svg></div><div class="cover-foot"><strong>2026.11.27 — 12.02</strong><span>6 DAYS / 5 NIGHTS</span></div></div>
+<div class="count-wrap"><div class="flex-between count-top"><b class="serif">距離出發還有</b><span class="eyebrow">DEPARTURE COUNTDOWN</span></div><div class="count-grid" aria-live="off"><div class="count-box"><div class="count-num" id="countDays">—</div><div class="count-unit">天 <span class="small">DAYS</span></div></div><div class="count-box"><div class="count-num" id="countHours">—</div><div class="count-unit">時 <span class="small">HOURS</span></div></div><div class="count-box"><div class="count-num" id="countMins">—</div><div class="count-unit">分 <span class="small">MIN</span></div></div></div><p class="count-foot" id="countCaption">倒數至 2026/11/27 13:40 · 台灣時間。若數字顯示「—」，代表預覽器未執行倒數程式。</p></div>
+<div class="paper journey-overview"><div><strong>KYOTO</strong><small>11/27 — 11/29</small></div><div class="line" aria-hidden="true"></div><div style="text-align:right"><strong>OSAKA</strong><small>11/29 — 12/02</small></div></div></section>
+<section id="travel" class="section wrap"><div class="sectionhead"><span class="eyebrow">TRAVEL CONNECTIONS</span><h2>交通與住宿</h2><p>保留高鐵、來回航班與兩間飯店資訊，版面改為更精簡。</p></div><article id="hsr" class="paper compact-transport" aria-label="11月27日已預訂高鐵資訊">
+ <div class="flex-between compact-title"><div><p class="eyebrow">NOV 27 · THSR 810</p><h3>高鐵交通資訊</h3></div><span class="tag train">已訂票</span></div>
+ <div class="compact-route"><div><span class="small">台中站</span><strong>09:36</strong></div><div class="compact-route-mid"><b>810</b><span>→</span><small>42 分鐘</small></div><div class="last"><span class="small">桃園站</span><strong>10:18</strong></div></div>
+ <div class="compact-meta"><span>5 車 14D、14E</span><span>2 位成人</span><span>合計 NT$970</span></div>
+ <p class="compact-footnote">早鳥票限本人使用，請攜帶證件。桃園高鐵站至機場 T1 接駁資訊待補。</p>
+</article>
+<div id="flights" class="subhead" style="margin:20px 0 12px"><h3 class="serif">航班資訊 / FLIGHTS</h3></div><div class="flight-grid"><article class="paper flightcard"><div class="flex-between"><div><p class="flight-date">去程 · NOV 27 FRI</p><h3>樂桃航空 PEACH · MM026</h3></div><span style="color:var(--red);font-size:23px">✈</span></div><div class="route"><div class="airport"><strong>TPE</strong><b>13:40</b><div class="small">桃園 T1</div></div><div class="route-mid">✈</div><div class="airport"><strong>KIX</strong><b>17:10</b><div class="small">關西 T2</div></div></div><div class="small">2026/11/27 · 各機場當地時間</div></article><article class="paper flightcard"><div class="flex-between"><div><p class="flight-date">回程 · DEC 02 WED</p><h3>樂桃航空 PEACH · MM027</h3></div><span style="color:var(--red);font-size:23px">✈</span></div><div class="route"><div class="airport"><strong>KIX</strong><b>15:25</b><div class="small">關西 T2</div></div><div class="route-mid">✈</div><div class="airport"><strong>TPE</strong><b>17:55</b><div class="small">桃園 T1</div></div></div><div class="small">2026/12/02 · 各機場當地時間</div></article></div><p class="note" style="margin-top:8px">航班資料依原始行程 PDF；出發前請再確認航空公司最新通知。</p>
+<div id="hotels" class="subhead" style="margin:31px 0 12px"><h3 class="serif">旅途中的住所 / HOTELS</h3></div><div class="hotel-grid"><article class="paper pad hotelcard"><p class="eyebrow">KYOTO · 2 NIGHTS</p><h3>京都四條大宮王子智能飯店</h3><p class="small">Prince Smart Inn Kyoto Shijo Omiya</p><hr class="separator"><p><b>入住</b>　11/27（五）</p><p><b>退房</b>　11/29（日）</p><p class="small" style="color:var(--red)">提醒：自助 Check-in</p><div class="buttonrow"><a class="button smallbtn" href="https://www.google.com/maps/search/?api=1&query=Prince%20Smart%20Inn%20Kyoto%20Shijo%20Omiya" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div></article><article class="paper pad hotelcard"><p class="eyebrow">OSAKA · 3 NIGHTS</p><h3>大阪 SDC 難波飯店</h3><p class="small">Sotetsu Grand Fresa Osaka Namba</p><hr class="separator"><p><b>入住</b>　11/29（日）</p><p><b>退房</b>　12/02（三）</p><div class="buttonrow"><a class="button smallbtn" href="https://share.google/8VEZeobHsHYNBZ7SJ" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div></article></div><div class="field" style="margin-top:15px"><label for="hotelNote">住宿補充備註（入住細節、行李寄放等）</label><textarea id="hotelNote" placeholder="請避免在共用裝置記錄完整訂房編號或其他敏感資料…"></textarea></div></section>
+<section id="itinerary" class="section wrap"><div class="sectionhead"><span class="eyebrow">THE SIX-DAY ITINERARY</span><h2>六日旅行日誌</h2><p>選擇日期，展開景點；需要時再調整順序與記錄備註。</p></div><div id="staticItinerary" class="static-itinerary" aria-label="六日行程完整閱讀版"><div class="static-explain">以下六天行程可直接閱讀。若目前預覽不支援互動，日期切換及編輯功能需在正式瀏覽器開啟後使用。航班時間已標示；其他沒有確認的時段保留「時間待定」。</div><details class="fallback-day paper" id="read-day-1" open=""><summary><span class="fallback-day-num">DAY 01 · 11/27（五）</span><strong>抵達京都</strong><span class="fallback-expand">點擊展開／收合</span></summary><div class="fallback-content"><div class="fallback-reminders"><b>當日提醒</b><ul><li>樂桃航空 MM026：桃園 T1 13:40 起飛，關西 T2 17:10 抵達</li><li>高鐵 810 車次：台中 09:36 出發、桃園 10:18 抵達；5 車 14D、14E，兩張共 NT$970</li><li>高鐵站前段及桃園站至機場接駁仍待補；早鳥票搭乘時請攜帶本人證件</li><li>京都飯店採自助 Check-in</li></ul></div><div class="fallback-timeline"><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>前往高鐵台中站</strong><div class="fallback-meta"><span class="tag pending">交通待確認</span></div><p>台中出發及前往高鐵站時間待補。</p></div><div class="fallback-stop"><span class="fallback-time">09:36–10:18</span><strong>高鐵 810 車次｜台中 → 桃園</strong><div class="fallback-meta"><span class="tag train">高鐵</span></div><p>5 車 14D、14E；2 位成人，早鳥票合計 NT$970。搭乘請攜帶本人證件。</p></div><div class="fallback-stop"><span class="fallback-time">10:18 後｜待定</span><strong>桃園高鐵站 → 桃園機場 T1</strong><div class="fallback-meta"><span class="tag pending">交通待確認</span></div><p>高鐵已在 10:18 抵達桃園，機場接駁方式與時間仍待補。</p></div><div class="fallback-stop"><span class="fallback-time">13:40 起飛</span><strong>樂桃 MM026｜桃園 T1 → 關西 T2</strong><div class="fallback-meta"><span class="tag flight">飛機</span></div><p>台灣時間 13:40 起飛，日本時間 17:10 抵達。</p></div><div class="fallback-stop"><span class="fallback-time">17:10 抵達</span><strong>關西機場 T2</strong><div class="fallback-meta"><span class="tag flight">飛機</span></div><p>樂桃航空 MM026 抵達關西機場 T2。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%97%9C%E8%A5%BF%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%20%E7%AC%AC2%E8%88%AA%E5%BB%88" rel="noopener noreferrer" target="_blank">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>JR 京都站（烏丸口）</strong><div class="fallback-meta"><span class="tag pending">交通待確認</span></div><p>前往京都車站烏丸口。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E9%83%BD%E9%A7%85%20%E7%83%8F%E4%B8%B8%E5%8F%A3" rel="noopener noreferrer" target="_blank">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>京都四條大宮王子智能飯店</strong><div class="fallback-meta"><span class="tag hotel">住宿</span></div><p>自助 Check-in；入住 11/27～11/29。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Prince%20Smart%20Inn%20Kyoto%20Shijo%20Omiya" rel="noopener noreferrer" target="_blank">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>らぁめん飛瀧</strong><div class="fallback-meta"><span class="tag food">用餐</span></div><p>原始行程地址：京都府京都市中京区大文字町234（新京極／錦市場商圈內）。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E9%83%BD%E5%BA%9C%E4%BA%AC%E9%83%BD%E5%B8%82%E4%B8%AD%E4%BA%AC%E5%8C%BA%E5%A4%A7%E6%96%87%E5%AD%97%E7%94%BA234" rel="noopener noreferrer" target="_blank">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>鴨川岸邊・河原町商圈</strong><div class="fallback-meta"><span class="tag walk">步行</span></div><p>夜間散步與商圈探索。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E9%83%BD%20%E6%B2%B3%E5%8E%9F%E7%94%BA%20%E9%B4%A8%E5%B7%9D" rel="noopener noreferrer" target="_blank">↗ Google Maps</a></div></div></div></details><details class="fallback-day paper" id="read-day-2" open><summary><span class="fallback-day-num">DAY 02 · 11/28（六）</span><strong>京都秋日散策</strong><span class="fallback-expand">點擊展開／收合</span></summary><div class="fallback-content"><div class="fallback-reminders"><b>當日提醒</b><ul><li>% ARABICA／Inoda Coffee 為早餐候選</li><li>午餐考慮鰻魚飯或日式定食，晚餐天壇燒肉可替換</li><li>未列明確切時間；嵐山與市區移動方式待確認</li></ul></div><div class="fallback-timeline"><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>清水寺</strong><div class="fallback-meta"><span class="tag walk">步行</span><span class="tag must">必去</span></div><p>京都東山的代表寺院。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%B8%85%E6%B0%B4%E5%AF%BA%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>日東堂・建仁寺</strong><div class="fallback-meta"><span class="tag walk">步行</span></div><p>安排寺院與街道散策；早餐候選另列於美食口袋名單。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%BB%BA%E4%BB%81%E5%AF%BA%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>花見小路・鴨川</strong><div class="fallback-meta"><span class="tag walk">步行</span></div><p>祇園周邊散步；原始行程備註「可再找」。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E8%8A%B1%E8%A6%8B%E5%B0%8F%E8%B7%AF%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>嵐山賞楓</strong><div class="fallback-meta"><span class="tag pending">交通待確認</span><span class="tag must">必去</span></div><p>原始行程安排賞楓，實際時段與交通待定。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B5%90%E5%B1%B1%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>天壇燒肉（晚餐候選）</strong><div class="fallback-meta"><span class="tag food">用餐</span></div><p>原始行程註明「可替換」。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E7%84%BC%E8%82%89%E3%81%AE%E5%90%8D%E9%96%80%20%E5%A4%A9%E5%A3%87%20%E4%BA%AC%E9%83%BD" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div></div></div></details><details class="fallback-day paper" id="read-day-3" open><summary><span class="fallback-day-num">DAY 03 · 11/29（日）</span><strong>天橋立・伊根舟屋</strong><span class="fallback-expand">點擊展開／收合</span></summary><div class="fallback-content"><div class="fallback-reminders"><b>當日提醒</b><ul><li>京都飯店退房，務必確認行李安排</li><li>前往京都車站八條口觀光巴士停車場；跟團集合時間待確認</li><li>天橋立／伊根為 KKday 跟團安排，晚間入住大阪難波飯店</li></ul></div><div class="fallback-timeline"><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>京都飯店退房</strong><div class="fallback-meta"><span class="tag hotel">住宿</span></div><p>確認退房、行李與跟團集合安排。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Prince%20Smart%20Inn%20Kyoto%20Shijo%20Omiya" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">集合時間待補</span><strong>京都車站八條口觀光巴士停車場</strong><div class="fallback-meta"><span class="tag bus">巴士</span></div><p>跟團集合地點；請以實際訂單確認時間。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BA%AC%E9%83%BD%E9%A7%85%20%E5%85%AB%E6%9D%A1%E5%8F%A3%20%E8%A6%B3%E5%85%89%E3%83%90%E3%82%B9%E9%A7%90%E8%BB%8A%E5%A0%B4" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>天橋立・伊根舟屋一日遊</strong><div class="fallback-meta"><span class="tag bus">跟團巴士</span><span class="tag must">必去</span></div><p>KKday 跟團；原始資料未提供集合及回程時刻。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E4%BC%8A%E6%A0%B9%E3%81%AE%E8%88%9F%E5%B1%8B%20%E5%A4%A9%E6%A9%8B%E7%AB%8B" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>入住大阪 SDC 難波飯店</strong><div class="fallback-meta"><span class="tag hotel">住宿</span></div><p>Sotetsu Grand Fresa Osaka Namba，入住 11/29～12/02。</p><a href="https://share.google/8VEZeobHsHYNBZ7SJ" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>道頓堀・千日前商圈</strong><div class="fallback-meta"><span class="tag walk">步行</span></div><p>晚餐未定，可考慮章魚燒、拉麵、串炸。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%20%E9%81%93%E9%A0%93%E5%A0%80%20%E5%8D%83%E6%97%A5%E5%89%8D" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div></div></div></details><details class="fallback-day paper" id="read-day-4" open><summary><span class="fallback-day-num">DAY 04 · 11/30（一）</span><strong>大阪城市散步</strong><span class="fallback-expand">點擊展開／收合</span></summary><div class="fallback-content"><div class="fallback-reminders"><b>當日提醒</b><ul><li>當日景點時間尚待安排；餐廳可依營業時間調整</li></ul></div><div class="fallback-timeline"><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>中崎町・OSA COFFEE</strong><div class="fallback-meta"><span class="tag walk">步行</span></div><p>中崎町街道散步與咖啡。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=OSA%20COFFEE%20%E5%A4%A7%E9%98%AA%20%E4%B8%AD%E5%B4%8E%E7%94%BA" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>桐麵（午餐）</strong><div class="fallback-meta"><span class="tag food">用餐</span></div><p>原始行程的午餐安排。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E6%A1%90%E9%BA%BA%20%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>大阪城公園</strong><div class="fallback-meta"><span class="tag pending">交通待確認</span><span class="tag must">必去</span></div><p>城市公園與大阪城景觀。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%E5%9F%8E%E5%85%AC%E5%9C%92" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>梅田商圈</strong><div class="fallback-meta"><span class="tag pending">交通待確認</span></div><p>購物與街區漫遊。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%20%E6%A2%85%E7%94%B0" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>吉次牛舌（晚餐）</strong><div class="fallback-meta"><span class="tag food">用餐</span></div><p>原始行程的晚餐安排。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%20%E5%90%89%E6%AC%A1%20%E7%89%9B%E8%88%8C" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div></div></div></details><details class="fallback-day paper" id="read-day-5" open><summary><span class="fallback-day-num">DAY 05 · 12/01（二）</span><strong>大阪購物日</strong><span class="fallback-expand">點擊展開／收合</span></summary><div class="fallback-content"><div class="fallback-reminders"><b>當日提醒</b><ul><li>原始行程提醒：可再找幾間咖啡廳與午餐</li><li>市區採買時間保留彈性</li></ul></div><div class="fallback-timeline"><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>おにぎり ごりちゃん（早餐）</strong><div class="fallback-meta"><span class="tag food">用餐</span></div><p>人氣排隊飯糰／Onigiri Gori-chan。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%20%E3%81%94%E3%82%8A%E3%81%A1%E3%82%83%E3%82%93%20%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>市區大衝刺採購</strong><div class="fallback-meta"><span class="tag walk">步行</span></div><p>依需求安排購物區域；其他咖啡廳與午餐尚待補充。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%20%E9%9B%A3%E6%B3%A2%20%E8%B2%B7%E7%89%A9" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>Dorajyu 大阪燒（晚餐）</strong><div class="fallback-meta"><span class="tag food">用餐</span></div><p>原始行程的晚餐安排。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Dorajyu%20%E5%A4%A7%E9%98%AA%E7%87%92%20%E5%A4%A7%E9%98%AA" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div></div></div></details><details class="fallback-day paper" id="read-day-6" open><summary><span class="fallback-day-num">DAY 06 · 12/02（三）</span><strong>難波最後巡禮・返程</strong><span class="fallback-expand">點擊展開／收合</span></summary><div class="fallback-content"><div class="fallback-reminders"><b>當日提醒</b><ul><li>大阪飯店退房，檢查護照及所有行李</li><li>樂桃航空 MM027：關西 T2 15:25 起飛，桃園 T1 17:55 抵達</li><li>從難波前往關西機場的交通方式及時間待補</li></ul></div><div class="fallback-timeline"><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>難波最後巡禮</strong><div class="fallback-meta"><span class="tag walk">步行</span></div><p>最後採買、散步；出發前預留機場交通與報到時間。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E5%A4%A7%E9%98%AA%20%E9%9B%A3%E6%B3%A2" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">時間待定</span><strong>關西機場 T2</strong><div class="fallback-meta"><span class="tag pending">交通待確認</span></div><p>前往關西機場第 2 航廈。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%20%E7%AC%AC2%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div><div class="fallback-stop"><span class="fallback-time">15:25 起飛</span><strong>樂桃航空 MM027</strong><div class="fallback-meta"><span class="tag flight">飛機</span></div><p>關西 T2 → 桃園 T1，台灣時間 17:55 抵達。</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%E9%96%A2%E8%A5%BF%E5%9B%BD%E9%9A%9B%E7%A9%BA%E6%B8%AF%20%E7%AC%AC2%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB" target="_blank" rel="noopener noreferrer">↗ Google Maps</a></div></div></div></details></div><div class="date-strip" id="dateTabs" role="tablist" aria-label="選擇行程日期"></div><div class="day-panel paper pad" id="dayPanel" aria-live="polite"></div></section>
+<section id="preparation" class="section wrap"><div class="sectionhead"><span class="eyebrow">TRAVEL PREPARATION</span><h2>旅行準備室</h2><p>勾選、分類與調整，把重要的小事一件件收好。</p></div><div class="prep-grid"><div class="paper pad" id="prepBox"><div class="subhead"><div><p class="eyebrow">BEFORE DEPARTURE</p><h3>出發前清單</h3></div><button type="button" class="button smallbtn" data-toggle-edit="prep">✎ 編輯</button></div><div class="progress-text"><span>準備進度</span><strong id="prepProgressText">0 / 0</strong></div><div class="progress"><div id="prepProgressBar"></div></div><div class="category-tabs" id="prepTabs" aria-label="出發前清單分類"></div><div id="prepItems"></div><div class="edit-only check-group"><button type="button" class="button smallbtn" data-add-item="prep">＋ 新增事項</button> <button type="button" class="button smallbtn" data-add-cat="prep">＋ 新增分類</button> <button type="button" class="button smallbtn" data-rename-cat="prep">重新命名分類</button> <button type="button" class="button smallbtn" data-move-cat="prep" data-dir="-1">分類 ↑</button> <button type="button" class="button smallbtn" data-move-cat="prep" data-dir="1">分類 ↓</button> <button type="button" class="button smallbtn" data-delete-cat="prep">刪除分類</button></div></div>
+<div class="paper pad" id="packBox"><div class="subhead"><div><p class="eyebrow">PACKING LIST</p><h3>行李清單</h3></div><button type="button" class="button smallbtn" data-toggle-edit="pack">✎ 編輯</button></div><div class="progress-text"><span>打包進度</span><strong id="packProgressText">0 / 0</strong></div><div class="progress"><div id="packProgressBar"></div></div><div class="category-tabs" id="packTabs" aria-label="行李分類"></div><div id="packItems"></div><div class="edit-only check-group"><button type="button" class="button smallbtn" data-add-item="pack">＋ 新增物品</button> <button type="button" class="button smallbtn" data-add-cat="pack">＋ 新增分類</button> <button type="button" class="button smallbtn" data-rename-cat="pack">重新命名分類</button> <button type="button" class="button smallbtn" data-move-cat="pack" data-dir="-1">分類 ↑</button> <button type="button" class="button smallbtn" data-move-cat="pack" data-dir="1">分類 ↓</button> <button type="button" class="button smallbtn" data-delete-cat="pack">刪除分類</button></div></div><div class="paper pad" id="buyBox"><div class="subhead"><div><p class="eyebrow">SHOPPING LIST</p><h3>必買清單</h3></div><button type="button" class="button smallbtn" data-toggle-edit="buy">✎ 編輯</button></div><div class="progress-text"><span>採買進度</span><strong id="buyProgressText">0 / 0</strong></div><div class="progress"><div id="buyProgressBar"></div></div><div class="category-tabs" id="buyTabs" aria-label="必買分類"></div><div id="buyItems"></div><div class="edit-only check-group"><button type="button" class="button smallbtn" data-add-item="buy">＋ 新增物品</button> <button type="button" class="button smallbtn" data-add-cat="buy">＋ 新增分類</button> <button type="button" class="button smallbtn" data-rename-cat="buy">重新命名分類</button> <button type="button" class="button smallbtn" data-move-cat="buy" data-dir="-1">分類 ↑</button> <button type="button" class="button smallbtn" data-move-cat="buy" data-dir="1">分類 ↓</button> <button type="button" class="button smallbtn" data-delete-cat="buy">刪除分類</button></div></div></div>
 </section>
-
-<section id="flight"><h2>航班</h2><span class="note">已依訂位資料更新</span>
-<div class="fl" style="margin-top:12px">
-<div class="card"><div class="top"><span class="pill">去程</span><span>11/27（五）</span></div>
-<div class="route"><div><b>13:40</b><small>桃園 TPE・T1</small></div><div class="mid"><svg viewBox="0 0 90 36" width="90" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 30h14M72 30h14" stroke-dasharray="1 7"/><g class="plane"><path d="M20 20h40l12-6-4 8 4 8-12-6H20a4 4 0 0 1 0-4z" fill="#F2A497"/><path d="M36 20l-6-10h8l8 10z" fill="#F6D27A"/></g></svg></div><div><b>17:10</b><small>關西 KIX・T2</small></div></div>
-<p style="font-size:13px">樂桃航空 Peach MM026　・　飛行約 2 小時 30 分</p></div>
-<div class="card"><div class="top"><span class="pill" style="background:var(--green)">回程</span><span>12/2（三）</span></div>
-<div class="route"><div><b>15:25</b><small>關西 KIX・T2</small></div><div class="mid"><svg viewBox="0 0 90 36" width="90" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 30h14M72 30h14" stroke-dasharray="1 7"/><g class="plane"><path d="M70 20H30L18 14l4 8-4 8 12-6h40a4 4 0 0 0 0-4z" fill="#B9DAA5"/><path d="M54 20l6-10h-8l-8 10z" fill="#F6D27A"/></g></svg></div><div><b>17:55</b><small>桃園 TPE・T1</small></div></div>
-<p style="font-size:13px">樂桃航空 Peach MM027　・　飛行約 3 小時 30 分</p></div>
-</div></section>
-
-<section id="plan"><h2>每日行程</h2>
-<div class="days" role="tablist" id="days" aria-label="選擇日期"></div>
-<div class="card" id="day" role="tabpanel"></div></section>
-
-<section id="todo"><h2>旅途待辦</h2>
-<p class="prog"><i id="p-todo"></i></p><ul class="list" id="l-todo"></ul></section>
-
-<section id="stay"><h2>住宿</h2><span class="note">已依你的資料更新</span>
-<div style="margin-top:12px">
-<div class="card hotel" style="background:var(--aqua)"><h3>京都四條大宮王子智能飯店</h3><dl><dt>英文</dt><dd>Prince Smart Inn Kyoto Shijo Omiya</dd><dt>日期</dt><dd>11/27 – 11/29（2 晚）</dd><dt>入住</dt><dd>自助 Check-in（時間待補）</dd><dt>退房</dt><dd>待補</dd><dt>地址</dt><dd>待補</dd></dl></div>
-<div class="card hotel" style="background:var(--green)"><h3>大阪 SDC 難波飯店</h3><dl><dt>英文</dt><dd>Sotetsu Grand Fresa Osaka Namba</dd><dt>日期</dt><dd>11/29 – 12/2（3 晚）</dd><dt>入住</dt><dd>待補</dd><dt>退房</dt><dd>待補</dd><dt>地址</dt><dd>待補</dd></dl></div>
-</div></section>
-
-<section id="before"><h2>出發前清單</h2>
-<p class="prog"><i id="p-before"></i></p><ul class="list" id="l-before"></ul></section>
-
-<section id="pack"><h2>行李清單</h2>
-<p class="prog"><i id="p-pack"></i></p><div id="l-pack"></div></section>
-
-<footer><svg viewBox="0 0 120 50" width="120" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><g class="bob"><path d="M60 8l8 8-8 10-8-10z" fill="#F2A497"/><path d="M60 26v18" /></g><path d="M20 46h80" /></svg><p>一路平安，玩得開心</p></footer>
-</main>
-
+</main><footer class="wrap footer">KYOTO & OSAKA · AUTUMN JOURNAL 2026 <br>在紅葉與街道之間，慢慢走過京都與大阪。<br><span class="small">單一 HTML · 離線可查看內建資訊 · 地圖及 Google 字型需網路</span></footer>
+<nav class="bottomnav" aria-label="手機底部導覽"><a href="#home" data-nav="home" aria-current="page"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.7" d="m3 10 9-7 9 7v10H3zM9 20v-7h6v7"/></svg>首頁</a><a href="#itinerary" data-nav="itinerary"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6m10-6v6M3 11h18"/></svg>行程</a><a href="#travel" data-nav="travel"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M2 12l19-8-7 17-3-8zM11 13l10-9"/></svg>交通</a><a href="#preparation" data-nav="preparation"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 6h12M9 12h12M9 18h12M3 6l2 2 3-4M3 12l2 2 3-4M3 18l2 2 3-4"/></svg>清單</a></nav>
+<div class="toast" id="toast" role="status" aria-live="polite"></div><div class="modal" id="modal" hidden><div class="paper" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h3 id="modalTitle"></h3><p id="modalDesc" class="muted"></p><div class="buttonrow"><button class="button" id="modalCancel" type="button">取消</button><button class="button primary" id="modalConfirm" type="button">確認</button></div></div></div>
 <script>
-var $=function(i){return document.getElementById(i)};
-var TAG={飛機:'fly',步行:'walk',巴士:'bus',跟團:'bus'};
-var DAYS=[
-{d:'11/27',w:'五',t:'抵達京都',i:[
-['17:10','關西機場 T2','入境、領行李、買交通 IC 卡',['飛機'],0],
-['18:30','JR 京都站（烏丸口）','預計時間，實際看入境排隊',['電車'],0],
-['20:30','京都四條大宮王子智能飯店','自助 Check-in',['地鐵','步行'],0],
-['21:30','らぁめん飛瀧','京都市中京区大文字町234（新京極／錦市場商圈內）。晚到可能打烊，請先確認營業時間',['步行'],1],
-['22:30','鴨川岸邊＆河原町商圈','',['步行'],0]]},
-{d:'11/28',w:'六',t:'東山與嵐山',i:[
-['08:30','清水寺','',['巴士','步行'],0],
-['10:30','日東堂與建仁寺','早餐：% ARABICA／Inoda Coffee 清水店',['步行'],1],
-['12:30','花見小路、鴨川','午餐：鰻魚飯或日式定食',['步行'],0,'可再找'],
-['14:30','嵐山賞楓','',['電車','步行'],1],
-['18:30','晚餐 天壇燒肉','',['電車'],1,'可替換']]},
-{d:'11/29',w:'日',t:'天橋立・伊根舟屋',i:[
-['早上','退房','',['步行'],0],
-['依憑證','京都車站八條口觀光巴士停車場','集合時間請看 KKday 憑證',['巴士'],0],
-['白天','天橋立／伊根舟屋','',['跟團'],0,'KKday 無腦跟團'],
-['傍晚','入住大阪 SDC 難波','',['電車'],0],
-['晚上','道頓堀、千日前商圈','章魚燒、拉麵、串炸',['步行'],0,'需要找晚餐']]},
-{d:'11/30',w:'一',t:'大阪散步',i:[
-['09:00','中崎町 OSA COFFEE','',['地鐵','步行'],1],
-['12:00','午餐 桐麵','',['步行'],1],
-['14:00','大阪城公園','',['地鐵','步行'],0],
-['16:30','梅田商圈','',['地鐵'],0],
-['18:30','晚餐 吉次牛舌','',['步行'],1]]},
-{d:'12/1',w:'二',t:'市區採購日',i:[
-['08:00','早餐 人氣排隊飯糰','おにぎり ごりちゃん／Onigiri Gori-chan',['步行'],1],
-['10:00','市區大衝刺採購','',['步行'],0],
-['12:30','午餐與咖啡廳','',['步行'],0,'待補：再找幾間'],
-['18:30','晚餐 Dorajyu 大阪燒','',['步行'],1]]},
-{d:'12/2',w:'三',t:'返程',i:[
-['上午','難波最後巡禮','',['步行'],0],
-['中午','關西機場 T2','辦理登機、退稅。15:25 起飛，17:55 抵達桃園 T1',['電車'],0],
-['15:25','起飛回桃園','',['飛機'],0]]}];
-var TODO=['買交通 IC 卡並儲值','吃章魚燒、拉麵與串炸','嵐山賞楓拍照','找 11/29 晚餐','再找幾間咖啡廳與午餐（12/1）','替換天壇燒肉的備案','買伴手禮','寄一張明信片'];
-var BEFORE=['確認護照效期（6 個月以上）','填寫 Visit Japan Web','訂好機票與住宿','準備網卡或 eSIM','兌換日幣現金','購買旅遊保險','下載地圖與翻譯 App','確認 KKday 天橋立行程集合時間與地點','確認餐廳營業時間與是否需訂位'];
-var PACK=[['證件與錢','護照','日幣現金','信用卡','手機與充電線'],['衣物','保暖外套','好走的鞋','圍巾手套','換洗衣物'],['其他','行動電源','轉接頭（日本為兩孔）','常備藥品','摺疊購物袋']];
-var st={};try{st=JSON.parse(localStorage.getItem('kyoto-trip')||'{}')}catch(e){}
-function save(){try{localStorage.setItem('kyoto-trip',JSON.stringify(st))}catch(e){}}
-function listHTML(pre,arr){return arr.map(function(x,n){var k=pre+n;return '<li><label><input type="checkbox" data-k="'+k+'" data-g="'+pre.split('-')[0]+'"'+(st[k]?' checked':'')+'><span></span><span>'+x+'</span></label></li>'}).join('')}
-$('l-todo').innerHTML=listHTML('todo-',TODO);
-$('l-before').innerHTML=listHTML('before-',BEFORE);
-$('l-pack').innerHTML=PACK.map(function(g,n){return '<h3 class="grp">'+g[0]+'</h3><ul class="list">'+listHTML('pack'+n+'-',g.slice(1))+'</ul>'}).join('');
-function prog(){['todo','before','pack'].forEach(function(g){var a=document.querySelectorAll('input[data-g^="'+g+'"]'),c=0;a.forEach(function(e){if(e.checked)c++});$('p-'+g).style.width=(a.length?c/a.length*100:0)+'%'})}
-document.addEventListener('change',function(e){var k=e.target.getAttribute&&e.target.getAttribute('data-k');if(k){st[k]=e.target.checked;save();prog()}});
-prog();
-var dEl=$('days');
-dEl.innerHTML=DAYS.map(function(x,n){return '<button role="tab" aria-selected="'+(n==0)+'" data-n="'+n+'"><small>第'+(n+1)+'天</small><b>'+x.d+'</b><small>週'+x.w+'</small></button>'}).join('');
-function show(n){var x=DAYS[n];[].forEach.call(dEl.children,function(b,i){b.setAttribute('aria-selected',i==n)});
-var h='<div class="dayhead"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="'+['#F2A497','#F6D27A','#A8D3E6','#B9DAA5','#F2A497','#F6D27A'][n]+'"/><path d="M14 22l6-10 6 10z" fill="#FFFCF6"/></svg><h3>'+x.d+'（週'+x.w+'）'+x.t+'</h3></div><ol class="tl">';
-x.i.forEach(function(s){h+='<li class="'+(s[4]?'must':'')+'"><div class="t">'+s[0]+'</div><h4>'+s[1]+(s[4]?'<span class="star">必去</span>':'')+(s[5]?'<span class="note">'+s[5]+'</span>':'')+'</h4>'+(s[2]?'<p>'+s[2]+'</p>':'')+'<div class="tags">'+s[3].map(function(t){return '<span class="tag '+(TAG[t]||'')+'">'+t+'</span>'}).join('')+'</div></li>'});
-var p=$('day');p.innerHTML=h+'</ol>';p.classList.remove('pop');void p.offsetWidth;p.classList.add('pop')}
-dEl.addEventListener('click',function(e){var b=e.target.closest('button');if(b)show(+b.getAttribute('data-n'))});
-show(0);
-var T=new Date('2026-11-27T08:00:00+08:00').getTime(),E=new Date('2026-12-02T23:59:00+08:00').getTime();
-function tick(){var n=Date.now(),d=T-n;
-if(d>0){$('cd').textContent=Math.floor(d/864e5);$('ch').textContent=Math.floor(d%864e5/36e5);$('cm').textContent=Math.floor(d%36e5/6e4);$('cmsg').textContent='距離出發還有這麼久，來整理行李吧'}
-else{$('cd').textContent=$('ch').textContent=$('cm').textContent=0;$('cmsg').textContent=n<E?'旅程進行中，玩得開心':'旅程結束，歡迎回家'}}
-tick();setInterval(tick,30000);
+'use strict';
+const days=[
+{date:'11/27',full:'2026-11-27',weekday:'五',en:'FRIDAY',name:'抵達京都',desc:'抵達關西，前往京都，開始第一晚的散步。',reminders:['樂桃航空 MM026：桃園 T1 13:40 起飛，關西 T2 17:10 抵達','高鐵已訂：810 車次，台中 09:36 → 桃園 10:18（5 車 14D、14E）','高鐵台中站前段及桃園高鐵站至機場接駁待補','京都飯店採自助 Check-in'],stops:[
+['d1hsr0','前往高鐵台中站','時間待定','交通待確認','pending','','台中出發時間及前往高鐵台中站的交通方式待補。','高鐵台中站'],
+['d1hsr1','高鐵 810 車次｜台中 → 桃園','09:36–10:18','高鐵','train','','車廂 5，座位 14D、14E；2 張早鳥優惠票共 NT$970。請攜帶本人證件備查。','高鐵台中站'],
+['d1hsr2','桃園高鐵站 → 桃園機場 T1','10:18 後｜時間待定','交通待確認','pending','','高鐵 10:18 抵達桃園站；到機場第一航廈的轉乘方式和所需時間仍待確認。','高鐵桃園站'],
+['d1flight','樂桃航空 MM026 起飛','13:40 起飛','飛機','flight','','桃園 T1 13:40 起飛（台灣時間）；預計關西 T2 17:10 抵達（日本時間）。','桃園國際機場 第一航廈'],
+['d1a','關西機場 T2','17:10 抵達','飛機','flight','', '樂桃航空 MM026 抵達關西機場 T2。','關西國際機場 第2航廈'],['d1b','JR 京都站（烏丸口）','時間待定','交通待確認','pending','','前往京都車站烏丸口。','京都駅 烏丸口'],['d1c','京都四條大宮王子智能飯店','時間待定','住宿','hotel','','自助 Check-in；入住 11/27～11/29。','Prince Smart Inn Kyoto Shijo Omiya'],['d1d','らぁめん飛瀧','時間待定','用餐','food','','原始行程地址：京都府京都市中京区大文字町234（新京極／錦市場商圈內）。','京都府京都市中京区大文字町234'],['d1e','鴨川岸邊・河原町商圈','時間待定','步行','walk','','夜間散步與商圈探索。','京都 河原町 鴨川']]},
+{date:'11/28',full:'2026-11-28',weekday:'六',en:'SATURDAY',name:'京都秋日散策',desc:'寺院、老街、咖啡與嵐山紅葉。',reminders:['% ARABICA／Inoda Coffee 為早餐候選','午餐考慮鰻魚飯或日式定食，晚餐天壇燒肉可替換','未列明確切時間；嵐山與市區移動方式待確認'],stops:[
+['d2a','清水寺','時間待定','步行','walk','must','京都東山的代表寺院。','清水寺 京都'],['d2b','日東堂・建仁寺','時間待定','步行','walk','','安排寺院與街道散策；早餐候選另列於美食口袋名單。','建仁寺 京都'],['d2c','花見小路・鴨川','時間待定','步行','walk','','祇園周邊散步；原始行程備註「可再找」。','花見小路 京都'],['d2d','嵐山賞楓','時間待定','交通待確認','pending','must','原始行程安排賞楓，實際時段與交通待定。','嵐山 京都'],['d2e','天壇燒肉（晚餐候選）','時間待定','用餐','food','optional','原始行程註明「可替換」。','焼肉の名門 天壇 京都']]},
+{date:'11/29',full:'2026-11-29',weekday:'日',en:'SUNDAY',name:'天橋立・伊根舟屋',desc:'京都退房、一日跟團，夜晚入住大阪。',reminders:['京都飯店退房，務必確認行李安排','前往京都車站八條口觀光巴士停車場；跟團集合時間待確認','天橋立／伊根為 KKday 跟團安排，晚間入住大阪難波飯店'],stops:[
+['d3a','京都飯店退房','時間待定','住宿','hotel','','確認退房、行李與跟團集合安排。','Prince Smart Inn Kyoto Shijo Omiya'],['d3b','京都車站八條口觀光巴士停車場','集合時間待補','巴士','bus','','跟團集合地點；請以實際訂單確認時間。','京都駅 八条口 観光バス駐車場'],['d3c','天橋立・伊根舟屋一日遊','時間待定','跟團巴士','bus','must','KKday 跟團；原始資料未提供集合及回程時刻。','伊根の舟屋 天橋立'],['d3d','入住大阪 SDC 難波飯店','時間待定','住宿','hotel','','Sotetsu Grand Fresa Osaka Namba，入住 11/29～12/02。','Sotetsu Grand Fresa Osaka Namba'],['d3e','道頓堀・千日前商圈','時間待定','步行','walk','','晚餐未定，可考慮章魚燒、拉麵、串炸。','大阪 道頓堀 千日前']]},
+{date:'11/30',full:'2026-11-30',weekday:'一',en:'MONDAY',name:'大阪城市散步',desc:'咖啡、好吃的麵、城公園與梅田。',reminders:['當日景點時間尚待安排；餐廳可依營業時間調整'],stops:[
+['d4a','中崎町・OSA COFFEE','時間待定','步行','walk','','中崎町街道散步與咖啡。','OSA COFFEE 大阪 中崎町'],['d4b','桐麵（午餐）','時間待定','用餐','food','','原始行程的午餐安排。','桐麺 大阪'],['d4c','大阪城公園','時間待定','交通待確認','pending','must','城市公園與大阪城景觀。','大阪城公園'],['d4d','梅田商圈','時間待定','交通待確認','pending','','購物與街區漫遊。','大阪 梅田'],['d4e','吉次牛舌（晚餐）','時間待定','用餐','food','','原始行程的晚餐安排。','大阪 吉次 牛舌']]},
+{date:'12/01',full:'2026-12-01',weekday:'二',en:'TUESDAY',name:'大阪購物日',desc:'排隊飯糰、購物採買，補充想吃的咖啡廳。',reminders:['原始行程提醒：可再找幾間咖啡廳與午餐','市區採買時間保留彈性'],stops:[
+['d5a','おにぎり ごりちゃん（早餐）','時間待定','用餐','food','','人氣排隊飯糰／Onigiri Gori-chan。','おにぎり ごりちゃん 大阪'],['d5b','市區大衝刺採購','時間待定','步行','walk','','依需求安排購物區域；其他咖啡廳與午餐尚待補充。','大阪 難波 買物'],['d5c','Dorajyu 大阪燒（晚餐）','時間待定','用餐','food','','原始行程的晚餐安排。','Dorajyu 大阪燒 大阪']]},
+{date:'12/02',full:'2026-12-02',weekday:'三',en:'WEDNESDAY',name:'難波最後巡禮・返程',desc:'最後散步、前往機場、返台。',reminders:['大阪飯店退房，檢查護照及所有行李','樂桃航空 MM027：關西 T2 15:25 起飛，桃園 T1 17:55 抵達','從難波前往關西機場的交通方式及時間待補'],stops:[
+['d6a','難波最後巡禮','時間待定','步行','walk','','最後採買、散步；出發前預留機場交通與報到時間。','大阪 難波'],['d6b','關西機場 T2','時間待定','交通待確認','pending','','前往關西機場第 2 航廈。','関西国際空港 第2ターミナル'],['d6c','樂桃航空 MM027','15:25 起飛','飛機','flight','','關西 T2 → 桃園 T1，台灣時間 17:55 抵達。','関西国際空港 第2ターミナル']]}
+];
+const initialFoods=[[],[{name:'% ARABICA／Inoda Coffee 清水店',cat:'早餐・咖啡',note:'二選一；原始行程早餐候選',map:''},{name:'鰻魚飯或日式定食',cat:'午餐',note:'尚未決定店家',map:''},{name:'天壇燒肉',cat:'晚餐',note:'原始行程標記「可替換」',map:''}],[{name:'道頓堀晚餐',cat:'晚餐',note:'章魚燒、拉麵或串炸；店家未定',map:''}],[],[{name:'咖啡廳與午餐待找',cat:'咖啡・午餐',note:'原始行程提醒：可以再多找幾間',map:''}],[]];
+const seedLists={prep:[{id:'prep-doc',name:'重要文件',items:['確認護照與有效期限','確認機票與航班資訊','確認訂房與入住資料','準備 Visit Japan Web 入境資料','確認旅遊保險']},{id:'prep-trip',name:'交通與通訊',items:['確認台中出發交通','確認高鐵車次與機場接駁','準備日本網路 SIM／eSIM','確認天橋立・伊根團體集合資訊']},{id:'prep-money',name:'金錢與其他',items:['準備日幣與信用卡','確認海外刷卡設定','下載旅行行程資料']}],pack:[{id:'pack-essential',name:'隨身重要物品',items:['護照','錢包、日幣、信用卡','手機','行動電源','充電線','航班與訂房資料']},{id:'pack-clothes',name:'衣物穿搭',items:['秋冬保暖外套','上衣與褲子','內衣與襪子','睡衣','舒適好走的鞋','圍巾']},{id:'pack-wash',name:'盥洗保養',items:['牙刷與牙膏','保養品','化妝品','個人衛生用品','防曬用品']},{id:'pack-tech',name:'電子用品',items:['充電器','耳機','相機（如需）','充電設備與插頭確認']},{id:'pack-others',name:'其他用品',items:['個人常用藥品','摺疊雨傘','購物袋','行李秤']}],buy:[{id:'buy-kyoto',name:'京都必買',items:['伴手禮待補','抹茶甜點待補','藥妝待補']},{id:'buy-osaka',name:'大阪必買',items:['零食待補','藥妝待補','家電或生活雜貨待補']},{id:'buy-family',name:'送禮清單',items:['家人伴手禮待補','朋友伴手禮待補']} ]};
+const KEY='kyoto-osaka-autumn-v1';const byId=id=>document.getElementById(id);const clone=x=>JSON.parse(JSON.stringify(x));const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fresh=()=>({version:1,selectedDay:0,orders:days.map(d=>d.stops.map(s=>s[0])),notes:{},dayNotes:{},foods:clone(initialFoods),lists:Object.fromEntries(Object.entries(seedLists).map(([key,groups])=>[key,groups.map(g=>({id:g.id,name:g.name,items:g.items.map((name,i)=>({id:g.id+'-'+i,name,done:false}))}))])),transportNote:'',hotelNote:'',plannedFoods:days.map(()=>[])});
+let data=fresh();try{const raw=localStorage.getItem(KEY);if(raw){const saved=JSON.parse(raw);if(saved?.version===1&&validate(saved))data=saved}}catch(e){console.warn('Unable to load saved data',e)}
+const ui={day:Math.max(0,Math.min(5,data.selectedDay||0)),editOrder:false,openStop:null,foodEdit:false,foodForm:null,activeCat:{prep:0,pack:0,buy:0},editList:{prep:false,pack:false,buy:false}};
+function validate(s){try{return Array.isArray(s.orders)&&s.orders.length===6&&s.orders.every(a=>Array.isArray(a))&&Array.isArray(s.foods)&&s.foods.length===6&&s.foods.every(a=>Array.isArray(a)&&a.every(f=>f&&typeof f.name==='string'&&typeof f.cat==='string'&&typeof f.note==='string'&&typeof f.map==='string'))&&s.lists&&['prep','pack','buy'].every(k=>Array.isArray(s.lists[k])&&s.lists[k].every(g=>typeof g.id==='string'&&typeof g.name==='string'&&Array.isArray(g.items)&&g.items.every(i=>typeof i.id==='string'&&typeof i.name==='string'&&typeof i.done==='boolean')))&&typeof s.notes==='object'&&s.notes!==null&&typeof s.dayNotes==='object'&&s.dayNotes!==null&&(s.transportNote===undefined||typeof s.transportNote==='string')&&typeof s.hotelNote==='string'}catch{return false}}
+// Keep existing browser notes, lists, and food entries compatible with this update.
+if(!Array.isArray(data.plannedFoods)||data.plannedFoods.length!==6)data.plannedFoods=days.map(()=>[]);
+data.foods.forEach((items,day)=>items.forEach((food,i)=>{if(!food.id)food.id='legacy-'+day+'-'+i}));
+let storageWarningShown=false;function save(){let localOK=true;try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){localOK=false}if(window.tripCloudSave){window.tripCloudSave(clone(data));return true}if(!localOK&&!storageWarningShown){storageWarningShown=true;showStorageWarning();toast('無法儲存到此瀏覽器')}return localOK}
+let toastTimer;function toast(msg){const e=byId('toast');e.textContent=msg;e.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>e.classList.remove('show'),2900)}
+function confirmBox(title,desc,action){byId('modalTitle').textContent=title;byId('modalDesc').textContent=desc;byId('modal').hidden=false;byId('modalConfirm').onclick=()=>{byId('modal').hidden=true;action()};byId('modalCancel').focus()};byId('modalCancel').addEventListener('click',()=>byId('modal').hidden=true);document.addEventListener('keydown',e=>{if(e.key==='Escape')byId('modal').hidden=true});
+function promptText(message,initial=''){const val=window.prompt(message,initial);return val===null?null:val.trim()}
+function mapUrl(q){if(q==='Sotetsu Grand Fresa Osaka Namba')return 'https://share.google/8VEZeobHsHYNBZ7SJ';return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q)}
+function safeMapUrl(value,name){try{const u=new URL(value);if(u.protocol==='https:'&&(/(^|\.)google\.[a-z.]+$/.test(u.hostname)||u.hostname==='maps.app.goo.gl'||u.hostname==='share.google'))return u.href}catch{}return mapUrl(name)}
+function countdown(){const left=Math.max(0,new Date('2026-11-27T13:40:00+08:00').getTime()-Date.now());const mins=Math.ceil(left/60000);byId('countDays').textContent=String(Math.floor(mins/1440)).padStart(2,'0');byId('countHours').textContent=String(Math.floor(mins%1440/60)).padStart(2,'0');byId('countMins').textContent=String(mins%60).padStart(2,'0');if(!left)byId('countCaption').textContent='旅程已啟程 · 2026/11/27 13:40（台灣時間）'}
+function japanISO(){const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());const get=t=>parts.find(p=>p.type===t)?.value||'00';return get('year')+'-'+get('month')+'-'+get('day')}
+function japanDay(){const jp=japanISO();const d=days.findIndex(x=>x.full===jp);return d>=0?d:jp<'2026-11-27'?0:5}
+function renderToday(){if(!byId('todayTitle')||!byId('todayJump')||!byId('todayDesc'))return;const now=japanISO(),i=japanDay(),d=days[i];byId('todayTitle').textContent=now<'2026-11-27'?'即將啟程 · 第一天預覽':now>'2026-12-02'?'六日旅程回顧':'DAY '+String(i+1).padStart(2,'0')+' · '+d.name;byId('todayDesc').textContent=d.desc;byId('todayJump').textContent=now>'2026-12-02'?'回顧六日行程 →':'查看 Day '+(i+1)+' 完整行程 →';byId('todayJump').onclick=()=>chooseDay(i,true)}
+function renderTabs(){byId('dateTabs').innerHTML=days.map((d,i)=>`<button class="day-tab ${ui.day===i?'active':''}" role="tab" aria-selected="${ui.day===i}" data-day="${i}" type="button"><small>DAY ${String(i+1).padStart(2,'0')}</small><strong>${d.date}</strong><small>週${d.weekday}</small></button>`).join('')}
+const tagLabel={flight:'飛機',train:'電車',walk:'步行',bus:'巴士',pending:'交通待確認',food:'用餐',hotel:'住宿'};
+function orderedStops(i){const planned=(data.plannedFoods[i]||[]).map(fid=>data.foods[i].find(f=>f.id===fid)).filter(Boolean).map(f=>['food-'+f.id,f.name,'時間待定','用餐','food','','由美食口袋名單加入。'+(f.note?' '+f.note:''),f.name]);const all=[...days[i].stops,...planned];const seen=new Set();const ids=(data.orders[i]||[]).filter(id=>all.some(s=>s[0]===id)&&!seen.has(id)&&seen.add(id));return [...ids.map(id=>all.find(s=>s[0]===id)),...all.filter(s=>!ids.includes(s[0]))]}
+function renderDay(){renderTabs();const d=days[ui.day],stops=orderedStops(ui.day),panel=byId('dayPanel');panel.classList.remove('swap');void panel.offsetWidth;panel.classList.add('swap');panel.innerHTML=`<div class="day-title"><div><p class="eyebrow">DAY ${String(ui.day+1).padStart(2,'0')} · ${d.en} · 2026.${d.date.replace('/','.')}</p><h2 style="font-size:clamp(22px,4vw,30px);margin:5px 0">${esc(d.name)}</h2><p class="small">${esc(d.desc)}</p></div><button type="button" class="button smallbtn" id="orderMode">${ui.editOrder?'✓ 完成排序':'↕ 調整順序'}</button></div><aside class="reminder"><h3>✦ 當日重要提醒</h3><ul>${d.reminders.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></aside><div class="timeline">${stops.map((s,i)=>{const [id,name,time,type,tag,flag,desc,place]=s;const isOpen=ui.openStop===id;const note=data.notes[id]||'';return `<article class="stop"><div class="stop-head"><button type="button" class="stop-open" data-stop="${esc(id)}" aria-expanded="${isOpen}"><span class="stop-time">${esc(time)}</span><div class="stop-name">${esc(name)} <span style="font-weight:400;color:var(--muted);font-size:12px">${isOpen?'⌃':'⌄'}</span></div><div class="tags"><span class="tag ${esc(tag)}">${esc(type)}</span>${flag==='must'?'<span class="tag must">必去</span>':''}${flag==='optional'?'<span class="tag pending">可替換</span>':''}</div></button>${ui.editOrder?`<div class="move-controls"><button type="button" class="iconbtn" aria-label="上移${esc(name)}" data-move="${esc(id)}" data-dir="-1" ${i===0?'disabled':''}>↑</button><button type="button" class="iconbtn" aria-label="下移${esc(name)}" data-move="${esc(id)}" data-dir="1" ${i===stops.length-1?'disabled':''}>↓</button></div>`:''}</div><div class="stop-detail" ${isOpen?'':'hidden'}><p>${esc(desc)}</p><div class="buttonrow"><a class="button smallbtn" target="_blank" rel="noopener noreferrer" href="${esc(mapUrl(place))}">↗ Google Maps 位置</a></div><div class="field"><label for="note-${esc(id)}">這個景點的個人備註</label><textarea id="note-${esc(id)}" data-stop-note="${esc(id)}" placeholder="記下集合資訊、想做的事…">${esc(note)}</textarea></div></div></article>`}).join('')}</div><hr class="separator"><div id="foodAnchor" class="subhead"><div><p class="eyebrow">FOOD & COFFEE NOTES</p><h3>今日美食口袋名單</h3></div><div class="food-header-actions"><button type="button" class="button primary smallbtn" id="foodAddBtn">＋ 新增候選</button><button type="button" class="button smallbtn" id="foodEditBtn">${ui.foodEdit?'✓ 完成編輯':'✎ 編輯名單'}</button></div></div><p class="small">先收藏想去的店；決定後按「加入今日行程」，可在時間軸調整順序。</p><div id="foodList"></div><div id="foodForm"></div><hr class="separator"><div class="field"><label for="dayNote">DAY ${ui.day+1} · 每日備註</label><textarea id="dayNote" placeholder="今天的提醒、臨時調整或旅行筆記…">${esc(data.dayNotes[d.full]||'')}</textarea></div><div class="daily-note-controls"><button class="button primary" type="button" id="saveDayNote">✓ 儲存備註</button><span id="dayNoteStatus" class="daily-note-status" role="status" aria-live="polite">輸入時也會自動儲存</span></div>`;renderFoods();}
+function chooseDay(index,scroll=false){ui.day=index;data.selectedDay=index;ui.openStop=null;ui.editOrder=false;ui.foodEdit=false;ui.foodForm=null;save();renderDay();if(scroll)byId('itinerary').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}
+function renderFoods(){
+ const items=data.foods[ui.day]||[];
+ byId('foodList').innerHTML=items.length?items.map((f,i)=>{
+  const planned=(data.plannedFoods[ui.day]||[]).includes(f.id);
+  return `<div class="food-item"><div class="flex-between"><b style="font-size:14px">${esc(f.name)}</b><span class="tag food">${esc(f.cat||'候選')}</span></div>${f.note?`<p>${esc(f.note)}</p>`:''}<div class="buttonrow" style="margin-top:8px"><a class="button smallbtn" target="_blank" rel="noopener noreferrer" href="${esc(f.map?safeMapUrl(f.map,f.name):mapUrl(f.name))}">↗ Google Maps</a><button class="button smallbtn ${planned?'':'primary'}" type="button" data-food-plan="${i}">${planned?'✓ 已加入 · 移出行程':'＋ 加入今日行程'}</button>${ui.foodEdit?`<button class="button smallbtn" type="button" data-food-edit="${i}">修改</button><button class="button smallbtn" type="button" data-food-delete="${i}">刪除</button>`:''}</div></div>`;
+ }).join(''):'<p class="small" style="padding:9px 0">尚無候選店家，按「＋ 新增候選」收藏想吃的餐廳或咖啡廳。</p>';
+ renderFoodForm();
+}
+function renderFoodForm(){
+ const el=byId('foodForm');if(!el)return;
+ if(!ui.foodForm){el.innerHTML='';return}
+ const idx=ui.foodForm.idx;
+ const f=Number.isInteger(idx)?data.foods[ui.day][idx]:{name:'',cat:'咖啡',note:'',map:''};
+ if(!f){ui.foodForm=null;el.innerHTML='';return}
+ el.innerHTML=`<div class="food-entry-panel"><h3 style="font-size:15px">${Number.isInteger(idx)?'修改候選店家':'新增候選店家'}</h3><form id="foodEntry" novalidate><div class="field"><label for="foodName">店家名稱 *</label><input id="foodName" maxlength="120" required value="${esc(f.name)}" placeholder="例如：想去的咖啡廳"></div><div class="field"><label for="foodCategory">分類</label><select id="foodCategory">${['咖啡','早餐','午餐','晚餐','甜點','其他'].concat(f.cat&&!['咖啡','早餐','午餐','晚餐','甜點','其他'].includes(f.cat)?[f.cat]:[]).map(x=>`<option ${x===f.cat?'selected':''}>${esc(x)}</option>`).join('')}</select></div><div class="field"><label for="foodNote">備註</label><textarea id="foodNote" placeholder="想吃什麼、候選理由…">${esc(f.note)}</textarea></div><div class="field"><label for="foodMap">Google Maps 連結（選填）</label><input id="foodMap" type="text" inputmode="url" value="${esc(f.map)}" placeholder="https://www.google.com/maps/..."></div><div class="buttonrow"><button class="button primary smallbtn" id="foodSaveBtn" type="button">${Number.isInteger(idx)?'✓ 儲存修改':'＋ 新增候選'}</button><button class="button smallbtn" id="foodCancel" type="button">取消</button></div></form></div>`;
+}
+function commitFoodCandidate(){
+ const nameEl=byId('foodName'),mapEl=byId('foodMap');
+ if(!nameEl||!mapEl){toast('表單未載入，請重新點選新增候選');return}
+ const name=nameEl.value.trim(),map=mapEl.value.trim();
+ let error=byId('foodFormStatus');
+ if(!error){error=document.createElement('p');error.id='foodFormStatus';error.className='food-form-status';error.setAttribute('role','status');byId('foodEntry')?.appendChild(error)}
+ if(!name){error.textContent='請先填寫店家名稱';nameEl.focus();return}
+ if(map&&!/^https:\/\//i.test(map)){error.textContent='地圖連結請使用 https:// 開頭，或先留空';mapEl.focus();return}
+ const idx=ui.foodForm?.idx;
+ if(Number.isInteger(idx)&&!data.foods[ui.day]?.[idx]){error.textContent='此候選資料已變動，請重新編輯';return}
+ const obj={id:Number.isInteger(idx)?data.foods[ui.day][idx].id:makeId(),name,cat:byId('foodCategory')?.value||'其他',note:byId('foodNote')?.value.trim()||'',map};
+ if(Number.isInteger(idx))data.foods[ui.day][idx]=obj;
+ else data.foods[ui.day].push(obj);
+ const ok=save();
+ ui.foodForm=null;
+ renderDay();
+ let notice=byId('foodResult');
+ if(!notice){notice=document.createElement('p');notice.id='foodResult';notice.className='food-form-status';notice.setAttribute('role','status');byId('foodList')?.after(notice)}
+ notice.textContent=ok?'✓ 「'+name+'」已加入 Day '+(ui.day+1)+' 美食口袋名單':'✓ 「'+name+'」已加入畫面，但此環境無法永久儲存；請使用正式網站開啟';
+ toast(ok?'新增成功：'+name:'已新增，但無法儲存至瀏覽器');
+}
+function setupDayEvents(){byId('dateTabs').addEventListener('click',e=>{const b=e.target.closest('[data-day]');if(b)chooseDay(Number(b.dataset.day))});byId('dayPanel').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.id==='saveDayNote'){const note=byId('dayNote');if(note)data.dayNotes[days[ui.day].full]=note.value;const ok=save(),status=byId('dayNoteStatus');if(status){status.textContent=ok?'✓ 已送出儲存，請確認上方雲端狀態':'⚠ 儲存失敗，請勿關閉頁面';status.classList.toggle('error',!ok)}toast(ok?'每日備註已儲存':'儲存失敗：此開啟環境可能不允許保存');return}if(b.id==='orderMode'){ui.editOrder=!ui.editOrder;renderDay();return}if(b.dataset.stop){ui.openStop=ui.openStop===b.dataset.stop?null:b.dataset.stop;renderDay();return}if(b.dataset.move){const arr=orderedStops(ui.day).map(s=>s[0]);const i=arr.indexOf(b.dataset.move),j=i+Number(b.dataset.dir);if(i>=0&&j>=0&&j<arr.length){[arr[i],arr[j]]=[arr[j],arr[i]];data.orders[ui.day]=arr;save();renderDay();toast('景點順序已儲存；交通資訊請重新確認')}return}if(b.id==='foodSaveBtn'){commitFoodCandidate();return}if(b.id==='foodAddBtn'){ui.foodForm={idx:null};renderFoodForm();byId('foodName')?.focus();return}if(b.id==='foodEditBtn'){ui.foodEdit=!ui.foodEdit;ui.foodForm=null;renderFoods();b.textContent=ui.foodEdit?'✓ 完成編輯':'✎ 編輯名單';return}if(b.dataset.foodPlan!==undefined){const i=Number(b.dataset.foodPlan),f=data.foods[ui.day][i];if(!f)return;const plan=data.plannedFoods[ui.day],id='food-'+f.id;if(plan.includes(f.id)){data.plannedFoods[ui.day]=plan.filter(x=>x!==f.id);data.orders[ui.day]=data.orders[ui.day].filter(x=>x!==id);toast('已從時間軸移除，口袋名單仍保留')}else{plan.push(f.id);data.orders[ui.day].push(id);toast('已加入今日行程，可用「調整順序」移動')}save();renderDay();return}if(b.dataset.foodEdit!==undefined){ui.foodForm={idx:Number(b.dataset.foodEdit)};renderFoodForm();byId('foodName')?.focus();return}if(b.dataset.foodDelete!==undefined){const idx=Number(b.dataset.foodDelete),item=data.foods[ui.day][idx];confirmBox('刪除候選店家？',`確定刪除「${item.name}」？`,()=>{const fid=item.id;data.foods[ui.day].splice(idx,1);data.plannedFoods[ui.day]=data.plannedFoods[ui.day].filter(x=>x!==fid);data.orders[ui.day]=data.orders[ui.day].filter(x=>x!=='food-'+fid);ui.foodForm=null;save();renderDay();toast('已刪除店家')});return}if(b.id==='foodCancel'){ui.foodForm=null;renderFoodForm()}});byId('dayPanel').addEventListener('input',e=>{if(e.target.dataset.stopNote){data.notes[e.target.dataset.stopNote]=e.target.value;save()}if(e.target.id==='dayNote'){data.dayNotes[days[ui.day].full]=e.target.value;const ok=save(),status=byId('dayNoteStatus');if(status){status.textContent=ok?'已排入儲存 · 請確認上方雲端狀態':'⚠ 無法自動儲存';status.classList.toggle('error',!ok)}}});byId('dayPanel').addEventListener('submit',e=>{if(e.target.id!=='foodEntry')return;e.preventDefault();commitFoodCandidate()})}
+function initTransport(){const input=byId('hotelNote');if(input){input.value=data.hotelNote||'';input.addEventListener('input',e=>{data.hotelNote=e.target.value;save()})}document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',async()=>{const t=b.dataset.copy;try{await navigator.clipboard.writeText(t);toast('已複製飯店名稱')}catch{promptText('請手動複製飯店名稱：',t)}}))}
+const listName=k=>k==='prep'?'出發前清單':k==='pack'?'行李清單':'必買清單';function getGroup(k){const gs=data.lists[k];ui.activeCat[k]=Math.max(0,Math.min(ui.activeCat[k],gs.length-1));return gs[ui.activeCat[k]]}
+function renderList(k){const groups=data.lists[k],all=groups.flatMap(g=>g.items),done=all.filter(i=>i.done).length;byId(k+'ProgressText').textContent=`${done} / ${all.length}`;byId(k+'ProgressBar').style.width=all.length?done/all.length*100+'%':'0%';const g=getGroup(k);byId(k+'Tabs').innerHTML=groups.map((cat,i)=>`<button type="button" data-category="${i}" class="${i===ui.activeCat[k]?'active':''}" aria-pressed="${i===ui.activeCat[k]}">${esc(cat.name)} · ${cat.items.filter(x=>x.done).length}/${cat.items.length}</button>`).join('');byId(k+'Items').innerHTML=g?g.items.length?g.items.map((it,i)=>`<div class="checkitem ${it.done?'done':''}"><input type="checkbox" data-check="${esc(it.id)}" aria-label="${esc(it.name)}" ${it.done?'checked':''}><span class="itemname">${esc(it.name)}</span><div class="check-actions edit-only"><button class="iconbtn" type="button" title="改名" aria-label="修改${esc(it.name)}" data-rename="${esc(it.id)}">✎</button><button class="iconbtn" type="button" title="移到其他分類" aria-label="移動${esc(it.name)}到其他分類" data-recategory="${esc(it.id)}">⇄</button><button class="iconbtn" type="button" title="上移" aria-label="上移${esc(it.name)}" data-list-move="${esc(it.id)}" data-dir="-1" ${i===0?'disabled':''}>↑</button><button class="iconbtn" type="button" title="下移" aria-label="下移${esc(it.name)}" data-list-move="${esc(it.id)}" data-dir="1" ${i===g.items.length-1?'disabled':''}>↓</button><button class="iconbtn" type="button" title="刪除" aria-label="刪除${esc(it.name)}" data-remove="${esc(it.id)}">×</button></div></div>`).join(''):'<p class="small" style="padding:16px 0">此分類目前沒有項目。進入編輯模式即可新增。</p>':'<p class="small">目前沒有分類，請新增分類。</p>';const box=byId(k==='prep'?'prepBox':k==='pack'?'packBox':'buyBox');box.classList.toggle('editing',ui.editList[k]);box.querySelector('[data-toggle-edit]').textContent=ui.editList[k]?'✓ 完成編輯':'✎ 編輯'}
+function makeId(){return 'x'+Date.now().toString(36)+Math.random().toString(36).slice(2,9)}
+function setupLists(){for(const k of ['prep','pack','buy']){byId(k+'Tabs').addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(b){ui.activeCat[k]=Number(b.dataset.category);renderList(k)}});byId(k+'Items').addEventListener('change',e=>{const id=e.target.dataset.check;if(!id)return;const item=getGroup(k)?.items.find(x=>x.id===id);if(item){item.done=e.target.checked;save();renderList(k)}});byId(k+'Items').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||!ui.editList[k])return;const g=getGroup(k),id=b.dataset.rename||b.dataset.remove||b.dataset.listMove||b.dataset.recategory;const i=g.items.findIndex(x=>x.id===id);if(i<0)return;if(b.dataset.recategory){const groups=data.lists[k];if(groups.length<2){toast('需要至少兩個分類');return}const choices=groups.map((g,j)=>(j+1)+'．'+g.name).join('\n');const val=promptText('要移到哪個分類？輸入編號：\n'+choices);if(val===null)return;const target=Number(val)-1;if(!Number.isInteger(target)||target<0||target>=groups.length){toast('請輸入有效分類編號');return}if(groups[target]!==g){groups[target].items.push(g.items.splice(i,1)[0]);save();renderList(k);toast('已移到「'+groups[target].name+'」')}return}if(b.dataset.rename){const name=promptText('修改項目名稱',g.items[i].name);if(name){g.items[i].name=name;save();renderList(k)}}else if(b.dataset.remove){const item=g.items[i];confirmBox('刪除清單項目？',`確定刪除「${item.name}」？`,()=>{g.items.splice(i,1);save();renderList(k);toast('已刪除項目')})}else if(b.dataset.listMove){const j=i+Number(b.dataset.dir);if(j>=0&&j<g.items.length){[g.items[i],g.items[j]]=[g.items[j],g.items[i]];save();renderList(k)}}})}document.querySelectorAll('[data-toggle-edit],[data-add-item],[data-add-cat],[data-rename-cat],[data-move-cat],[data-delete-cat]').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.toggleEdit||b.dataset.addItem||b.dataset.addCat||b.dataset.renameCat||b.dataset.moveCat||b.dataset.deleteCat;const g=getGroup(k);if(b.dataset.toggleEdit){ui.editList[k]=!ui.editList[k];renderList(k);return}if(!ui.editList[k])return;if(b.dataset.addItem){if(!g){toast('請先新增分類');return}const name=promptText(`新增至「${g.name}」`);if(name){g.items.push({id:makeId(),name,done:false});save();renderList(k);toast('項目已新增')}}else if(b.dataset.addCat){const name=promptText('新增分類名稱');if(name){data.lists[k].push({id:makeId(),name,items:[]});ui.activeCat[k]=data.lists[k].length-1;save();renderList(k);toast('分類已新增')}}else if(b.dataset.renameCat){if(!g)return;const name=promptText('重新命名分類',g.name);if(name){g.name=name;save();renderList(k)}}else if(b.dataset.moveCat){const i=ui.activeCat[k],j=i+Number(b.dataset.dir),a=data.lists[k];if(j<0||j>=a.length){toast('已經在分類清單邊界');return}[a[i],a[j]]=[a[j],a[i]];ui.activeCat[k]=j;save();renderList(k);toast('分類順序已儲存')}else if(b.dataset.deleteCat){if(!g)return;confirmBox('刪除整個分類？',`「${g.name}」與其中 ${g.items.length} 個項目將一起刪除。`,()=>{data.lists[k].splice(ui.activeCat[k],1);ui.activeCat[k]=0;save();renderList(k);toast('分類已刪除')})}}))}
+function setupNavigation(){
+ const menu=byId('menuPanel'),toggle=byId('menuToggle');
+ if(toggle&&menu){toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))})};
+ const nav=document.querySelectorAll('[data-nav]');
+ const setActive=id=>nav.forEach(a=>id===a.dataset.nav?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
+ function goTo(id){if(id==='foodAnchor'&&!byId('foodAnchor'))id='itinerary';const section=byId(id);if(!section)return;if(menu)menu.classList.remove('open'); if(toggle)toggle.setAttribute('aria-expanded','false');const header=document.querySelector('.topbar').getBoundingClientRect().height;const y=Math.max(0,section.getBoundingClientRect().top+window.scrollY-header-12);window.scrollTo({top:y,behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});setActive(id)}
+ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);if(byId(id)){e.preventDefault();goTo(id)}}));
+ let pending=false;function refresh(){pending=false;const threshold=document.querySelector('.topbar').getBoundingClientRect().height+95;let current='home';for(const id of ['home','travel','itinerary','preparation'])if(byId(id)&&byId(id).getBoundingClientRect().top<=threshold)current=id;setActive(current)}
+ window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(refresh)}},{passive:true});window.addEventListener('resize',refresh);refresh()
+}
+function showStorageWarning(){let e=byId('saveNotice');if(!e){e=document.createElement('div');e.id='saveNotice';e.setAttribute('role','status');e.className='storage-warning';document.querySelector('.topbar').insertAdjacentElement('afterend',e)}e.textContent='⚠ 目前開啟方式不允許自動儲存。你仍可閱讀與編輯，但關閉後可能遺失修改。建議使用 HTTPS 網址在 Safari 中開啟。'}
+function checkStorage(){try{const key=KEY+'-probe';localStorage.setItem(key,'1');const good=localStorage.getItem(key)==='1';localStorage.removeItem(key);if(!good)throw Error('storage unavailable')}catch(e){storageWarningShown=true;showStorageWarning()}}
+function init(){const notice=byId('previewNotice');if(notice)notice.remove();checkStorage();countdown();setInterval(countdown,30000);renderToday();setInterval(renderToday,60000);setupDayEvents();renderDay();initTransport();setupLists();renderList('prep');renderList('pack');renderList('buy');setupNavigation();document.documentElement.setAttribute('data-js-ready','true')}window.tripPage={
+ getLocal:()=>clone(data),
+ getSeed:()=>fresh(),
+ applyRemote:(incoming)=>{
+  if(!validate(incoming))throw new Error('雲端行程格式不正確');
+  const keepDay=ui.day;
+  data=clone(incoming);
+  if(!Array.isArray(data.plannedFoods)||data.plannedFoods.length!==6)data.plannedFoods=days.map(()=>[]);
+  data.foods.forEach((items,day)=>items.forEach((food,i)=>{if(!food.id)food.id='legacy-'+day+'-'+i}));
+  data.selectedDay=keepDay;
+  try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){}
+  renderDay();renderList('prep');renderList('pack');renderList('buy');
+  const hotel=byId('hotelNote');if(hotel&&document.activeElement!==hotel)hotel.value=data.hotelNote||'';
+ }
+};
+try{init()}catch(err){console.error(err);const notice=byId('previewNotice')||document.createElement('div');notice.id='previewNotice';notice.setAttribute('role','alert');notice.className='storage-warning';notice.textContent='網站互動未能啟動，但下方六日行程仍可閱讀。若要使用日期切換、倒數和編輯功能，請改用能執行 JavaScript 的瀏覽器開啟。';document.body.prepend(notice)}
 </script>
-</body>
-</html>
+<script type="module">
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js';
+import { getFirestore, doc, onSnapshot, setDoc, runTransaction } from 'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js';
+
+const firebaseConfig = {
+ apiKey:'AIzaSyB6HWO9gnzICLoos4fpUX47zaKXqyuHT9I',
+ authDomain:'kyoto-osaka-trip-2026-7c39d.firebaseapp.com',
+ projectId:'kyoto-osaka-trip-2026-7c39d',
+ storageBucket:'kyoto-osaka-trip-2026-7c39d.firebasestorage.app',
+ messagingSenderId:'835964791002',
+ appId:'1:835964791002:web:6031206635078030c29de3'
+};
+const ADMIN_UID='TnpBGrZsNoeUYUntpLBwbKYPtVX2';
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app);
+const ref=doc(db,'trips','kyoto-osaka-2026');
+const $=id=>document.getElementById(id);
+const clone=v=>JSON.parse(JSON.stringify(v));
+const gate=$('cloudGate'),info=$('cloudGateInfo'),title=$('cloudGateTitle'),form=$('cloudLoginForm'),setup=$('cloudFirstSetup'),error=$('cloudLoginError'),status=$('cloudStatus'),signout=$('cloudSignout');
+let unsubscribe=null, baseline=null, dirty=false, saving=false, nextSave=null, signedIn=false, started=false, changes=0, lastAck=0, latestRemote=null;
+function showStatus(message,kind='') {status.textContent=message;status.className='cloud-badge '+kind;}
+function showGate(mode,message='') { gate.hidden=false;form.hidden=mode!=='login';setup.hidden=mode!=='setup';title.textContent=mode==='login'?'登入我們的旅行日誌':mode==='setup'?'首次建立共用行程':'正在載入共用行程…';info.textContent=message|| (mode==='login'?'你和男朋友可以用同一組旅行網站帳號登入。':'請保持網路連線。');}
+function authError(e){const messages={'auth/invalid-credential':'Email 或密碼不正確。','auth/invalid-email':'Email 格式不正確。','auth/too-many-requests':'登入次數過多，請稍後再試。','auth/network-request-failed':'網路連線失敗，請檢查網路。','permission-denied':'資料庫權限不足，請確認 Rules 已發布。'};return messages[e.code]||e.message||'發生未知錯誤'}
+function remoteState(raw){return raw?.state||null}
+function sanitize(input){const x=clone(input);delete x.selectedDay;return x}
+function eq(a,b){return JSON.stringify(a)===JSON.stringify(b)}
+function mergeEdits(base,local,remote) {
+ // Merge independent fields, individual notes, and each day's plan.
+ const updated=clone(remote);
+ for(const prop of ['hotelNote','transportNote'])if(!eq(local[prop],base[prop]))updated[prop]=clone(local[prop]??'');
+ for(const group of ['notes','dayNotes']){
+  updated[group]=updated[group]||{};
+  const keys=new Set([...Object.keys(base[group]||{}),...Object.keys(local[group]||{})]);
+  for(const k of keys)if(!eq((base[group]||{})[k],(local[group]||{})[k])){
+   if(Object.prototype.hasOwnProperty.call(local[group]||{},k))updated[group][k]=local[group][k];
+   else delete updated[group][k];
+  }
+ }
+ for(const group of ['foods','orders','plannedFoods']){
+  updated[group]=updated[group]||[];
+  for(let day=0;day<6;day++)if(!eq((base[group]||[])[day],(local[group]||[])[day]))updated[group][day]=clone(local[group][day]);
+ }
+ updated.lists=updated.lists||{};
+ for(const key of ['prep','pack','buy'])if(!eq((base.lists||{})[key],(local.lists||{})[key]))updated.lists[key]=clone(local.lists[key]);
+ return updated;
+}
+function safeApply(state){try{window.tripPage.applyRemote({...state,selectedDay:window.tripPage.getLocal().selectedDay||0});return true}catch(e){console.error(e);showStatus('雲端資料格式錯誤，請勿編輯','bad');error.textContent='讀取的資料格式無法辨識，請避免覆蓋既有行程。';gate.hidden=false;return false}}
+function planSave() {clearTimeout(nextSave);nextSave=setTimeout(flush,950)}
+window.tripCloudSave=(value)=>{if(!signedIn||!started||!baseline){showStatus('尚未連線，未同步','bad');return}dirty=true;changes++;showStatus('修改待同步…');planSave()};
+async function flush(){
+ if(saving||!dirty||!signedIn||!baseline||!started)return;
+ saving=true;const revision=changes,local=sanitize(window.tripPage.getLocal()),before=clone(baseline);
+ showStatus('正在同步…');
+ try{
+  const latest=await runTransaction(db,async tx=>{
+   const snap=await tx.get(ref);if(!snap.exists())throw new Error('雲端行程不存在');
+   const server=remoteState(snap.data());if(!server)throw new Error('雲端行程資料遺失');
+   const merged=mergeEdits(before,local,server);
+   tx.set(ref,{state:merged,updatedAt:Date.now(),schema:1});
+   return merged;
+  });
+  baseline=clone(latest);
+  if(changes===revision){dirty=false;lastAck=revision;safeApply(latest);showStatus('✓ 已同步至雲端','ok')}
+  else {dirty=true;showStatus('仍有修改待同步…');planSave()}
+ }catch(e){console.error(e);showStatus('⚠ 雲端儲存失敗','bad');error.textContent='同步失敗：'+authError(e)+'。請保留頁面及網路連線。';setTimeout(()=>{if(dirty&&signedIn)planSave()},4000)}
+ finally{saving=false}
+}
+function listen(){
+ if(unsubscribe){unsubscribe();unsubscribe=null}
+ started=false;baseline=null;dirty=false;latestRemote=null;
+ showStatus('讀取共用資料中…');showGate('loading');
+ unsubscribe=onSnapshot(ref,snap=>{
+  if(!snap.exists()){
+   started=false;showStatus('首次設定等待確認');showGate('setup','目前雲端還沒有行程資料。請在資料最完整的裝置上建立。');return;
+  }
+  const remote=remoteState(snap.data());if(!remote){showStatus('雲端文件格式不正確','bad');showGate('loading','找不到行程資料，請確認 Firebase 文件內容。');return}
+  if(!started){
+   if(!safeApply(remote))return;
+   baseline=clone(remote);started=true;gate.hidden=true;error.textContent='';showStatus('✓ 已連上共用行程','ok');return;
+  }
+  if(!dirty&&!saving){if(!safeApply(remote))return;baseline=clone(remote);showStatus('✓ 已同步至雲端','ok')}
+  else {latestRemote=clone(remote)}
+ },e=>{console.error(e);showStatus('⚠ 無法讀取共用行程','bad');showGate('loading','資料庫讀取失敗，請確認 Firestore Rules 已發布與網路正常。');error.textContent=authError(e)})
+}
+form.addEventListener('submit',async ev=>{
+ ev.preventDefault();error.textContent='';const email=$('cloudEmail').value.trim(),password=$('cloudPassword').value;
+ $('cloudLoginSubmit').disabled=true;showStatus('驗證登入中…');
+ try{await signInWithEmailAndPassword(auth,email,password);$('cloudPassword').value=''}
+ catch(e){error.textContent=authError(e);showStatus('登入失敗','bad')}
+ finally{$('cloudLoginSubmit').disabled=false}
+});
+$('cloudInitLocal').addEventListener('click',async()=>{
+ if(!signedIn||auth.currentUser?.uid!==ADMIN_UID)return;
+ if(!window.confirm('確定使用這台裝置現有的行程建立雲端共用資料嗎？此操作只在雲端尚無資料時執行。'))return;
+ $('cloudInitLocal').disabled=true;error.textContent='';
+ try{
+  const local=sanitize(window.tripPage.getLocal());
+  await runTransaction(db,async tx=>{const snapshot=await tx.get(ref);if(snapshot.exists())throw new Error('共用資料已存在，請重新載入');tx.set(ref,{state:local,schema:1,updatedAt:Date.now()})});
+  showStatus('已建立雲端行程，正在載入…');
+ }catch(e){error.textContent=authError(e);$('cloudInitLocal').disabled=false}
+});
+signout.addEventListener('click',async()=>{if(dirty){const okay=window.confirm('還有修改尚未同步，確定要登出嗎？');if(!okay)return}await signOut(auth)});
+onAuthStateChanged(auth,user=>{
+ if(unsubscribe){unsubscribe();unsubscribe=null}
+ if(!user){signedIn=false;started=false;baseline=null;window.tripCloudSave=null;signout.hidden=true;showGate('login');showStatus('尚未登入');return}
+ if(user.uid!==ADMIN_UID){signedIn=false;showGate('login','這組帳號沒有編輯權限，請用已設定的旅行網站帳號登入。');error.textContent='登入帳號並非管理員帳號。';showStatus('沒有編輯權限','bad');return}
+ signedIn=true;window.tripCloudSave=(value)=>{if(!started||!baseline){showStatus('等待載入行程，未同步','bad');return}dirty=true;changes++;showStatus('修改待同步…');planSave()};
+ signout.hidden=false;listen();
+});
+</script>
+<script>window.setTimeout(()=>{const el=document.getElementById('cloudStatus');if(el&&el.textContent==='等待 Firebase 連線…'){el.textContent='無法載入 Firebase；請用 HTTPS 網址及正常網路開啟';el.classList.add('bad');document.getElementById('cloudGateInfo').textContent='Firebase SDK 未能載入。請先將此 HTML 上傳至 GitHub Pages，再用 Safari／Chrome 開啟。'}},9000)</script>
+</body></html>
