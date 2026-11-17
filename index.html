@@ -337,7 +337,15 @@ let unsubscribe=null, baseline=null, dirty=false, saving=false, nextSave=null, s
 function showStatus(message,kind='') {status.textContent=message;status.className='cloud-badge '+kind;}
 function showGate(mode,message='') { gate.hidden=false;form.hidden=mode!=='login';setup.hidden=mode!=='setup';title.textContent=mode==='login'?'登入我們的旅行日誌':mode==='setup'?'首次建立共用行程':'正在載入共用行程…';info.textContent=message|| (mode==='login'?'你和男朋友可以用同一組旅行網站帳號登入。':'請保持網路連線。');}
 function authError(e){const messages={'auth/invalid-credential':'Email 或密碼不正確。','auth/invalid-email':'Email 格式不正確。','auth/too-many-requests':'登入次數過多，請稍後再試。','auth/network-request-failed':'網路連線失敗，請檢查網路。','permission-denied':'資料庫權限不足，請確認 Rules 已發布。'};return messages[e.code]||e.message||'發生未知錯誤'}
-function remoteState(raw){return raw?.state||null}
+// Firestore rejects arrays nested inside arrays (such as six days of stop IDs).
+// Encode the whole state as JSON text; decode on read. Keep legacy-read support.
+function remoteState(raw){
+ if(typeof raw?.stateJson==='string'){
+  try{return JSON.parse(raw.stateJson)}catch(e){console.error('Invalid remote state JSON',e);return null}
+ }
+ return raw?.state||null;
+}
+function encodeState(state){return {stateJson:JSON.stringify(state),updatedAt:Date.now(),schema:2}}
 function sanitize(input){const x=clone(input);delete x.selectedDay;return x}
 function eq(a,b){return JSON.stringify(a)===JSON.stringify(b)}
 function mergeEdits(base,local,remote) {
@@ -372,7 +380,7 @@ async function flush(){
    const snap=await tx.get(ref);if(!snap.exists())throw new Error('雲端行程不存在');
    const server=remoteState(snap.data());if(!server)throw new Error('雲端行程資料遺失');
    const merged=mergeEdits(before,local,server);
-   tx.set(ref,{state:merged,updatedAt:Date.now(),schema:1});
+   tx.set(ref,encodeState(merged));
    return merged;
   });
   baseline=clone(latest);
@@ -411,7 +419,8 @@ $('cloudInitLocal').addEventListener('click',async()=>{
  $('cloudInitLocal').disabled=true;error.textContent='';
  try{
   const local=sanitize(window.tripPage.getLocal());
-  await runTransaction(db,async tx=>{const snapshot=await tx.get(ref);if(snapshot.exists())throw new Error('共用資料已存在，請重新載入');tx.set(ref,{state:local,schema:1,updatedAt:Date.now()})});
+  if(!local||!Array.isArray(local.orders)||!Array.isArray(local.foods))throw new Error('本機行程資料不完整');
+  await runTransaction(db,async tx=>{const snapshot=await tx.get(ref);if(snapshot.exists())throw new Error('共用資料已存在，請重新載入');tx.set(ref,encodeState(local))});
   showStatus('已建立雲端行程，正在載入…');
  }catch(e){error.textContent=authError(e);$('cloudInitLocal').disabled=false}
 });
